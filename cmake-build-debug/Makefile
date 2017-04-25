@@ -177,6 +177,33 @@ src/accessMem.cpp.s:
 	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/accessMem.cpp.s
 .PHONY : src/accessMem.cpp.s
 
+src/decode.o: src/decode.cpp.o
+
+.PHONY : src/decode.o
+
+# target to build an object file
+src/decode.cpp.o:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/decode.cpp.o
+.PHONY : src/decode.cpp.o
+
+src/decode.i: src/decode.cpp.i
+
+.PHONY : src/decode.i
+
+# target to preprocess a source file
+src/decode.cpp.i:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/decode.cpp.i
+.PHONY : src/decode.cpp.i
+
+src/decode.s: src/decode.cpp.s
+
+.PHONY : src/decode.s
+
+# target to generate assembly for a file
+src/decode.cpp.s:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/decode.cpp.s
+.PHONY : src/decode.cpp.s
+
 src/execute.o: src/execute.cpp.o
 
 .PHONY : src/execute.o
@@ -273,6 +300,9 @@ help:
 	@echo "... src/accessMem.o"
 	@echo "... src/accessMem.i"
 	@echo "... src/accessMem.s"
+	@echo "... src/decode.o"
+	@echo "... src/decode.i"
+	@echo "... src/decode.s"
 	@echo "... src/execute.o"
 	@echo "... src/execute.i"
 	@echo "... src/execute.s"

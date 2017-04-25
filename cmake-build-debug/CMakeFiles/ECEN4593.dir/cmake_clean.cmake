@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ECEN4593.dir/src/execute.cpp.o"
   "CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o"
   "CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o"
+  "CMakeFiles/ECEN4593.dir/src/decode.cpp.o"
   "ECEN4593.pdb"
   "ECEN4593"
 )
