@@ -150,6 +150,114 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/accessMem.o: src/accessMem.cpp.o
+
+.PHONY : src/accessMem.o
+
+# target to build an object file
+src/accessMem.cpp.o:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o
+.PHONY : src/accessMem.cpp.o
+
+src/accessMem.i: src/accessMem.cpp.i
+
+.PHONY : src/accessMem.i
+
+# target to preprocess a source file
+src/accessMem.cpp.i:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/accessMem.cpp.i
+.PHONY : src/accessMem.cpp.i
+
+src/accessMem.s: src/accessMem.cpp.s
+
+.PHONY : src/accessMem.s
+
+# target to generate assembly for a file
+src/accessMem.cpp.s:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/accessMem.cpp.s
+.PHONY : src/accessMem.cpp.s
+
+src/execute.o: src/execute.cpp.o
+
+.PHONY : src/execute.o
+
+# target to build an object file
+src/execute.cpp.o:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/execute.cpp.o
+.PHONY : src/execute.cpp.o
+
+src/execute.i: src/execute.cpp.i
+
+.PHONY : src/execute.i
+
+# target to preprocess a source file
+src/execute.cpp.i:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/execute.cpp.i
+.PHONY : src/execute.cpp.i
+
+src/execute.s: src/execute.cpp.s
+
+.PHONY : src/execute.s
+
+# target to generate assembly for a file
+src/execute.cpp.s:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/execute.cpp.s
+.PHONY : src/execute.cpp.s
+
+src/fetch.o: src/fetch.cpp.o
+
+.PHONY : src/fetch.o
+
+# target to build an object file
+src/fetch.cpp.o:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/fetch.cpp.o
+.PHONY : src/fetch.cpp.o
+
+src/fetch.i: src/fetch.cpp.i
+
+.PHONY : src/fetch.i
+
+# target to preprocess a source file
+src/fetch.cpp.i:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/fetch.cpp.i
+.PHONY : src/fetch.cpp.i
+
+src/fetch.s: src/fetch.cpp.s
+
+.PHONY : src/fetch.s
+
+# target to generate assembly for a file
+src/fetch.cpp.s:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/fetch.cpp.s
+.PHONY : src/fetch.cpp.s
+
+src/writeBack.o: src/writeBack.cpp.o
+
+.PHONY : src/writeBack.o
+
+# target to build an object file
+src/writeBack.cpp.o:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o
+.PHONY : src/writeBack.cpp.o
+
+src/writeBack.i: src/writeBack.cpp.i
+
+.PHONY : src/writeBack.i
+
+# target to preprocess a source file
+src/writeBack.cpp.i:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/writeBack.cpp.i
+.PHONY : src/writeBack.cpp.i
+
+src/writeBack.s: src/writeBack.cpp.s
+
+.PHONY : src/writeBack.s
+
+# target to generate assembly for a file
+src/writeBack.cpp.s:
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/writeBack.cpp.s
+.PHONY : src/writeBack.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +270,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/accessMem.o"
+	@echo "... src/accessMem.i"
+	@echo "... src/accessMem.s"
+	@echo "... src/execute.o"
+	@echo "... src/execute.i"
+	@echo "... src/execute.s"
+	@echo "... src/fetch.o"
+	@echo "... src/fetch.i"
+	@echo "... src/fetch.s"
+	@echo "... src/writeBack.o"
+	@echo "... src/writeBack.i"
+	@echo "... src/writeBack.s"
 .PHONY : help
 
 

@@ -83,6 +83,30 @@
 		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/main.cpp">
 			<Option target="ECEN4593"/>
 		</Unit>
+		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp">
+			<Option target="ECEN4593"/>
+		</Unit>
+		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.h">
+			<Option target="ECEN4593"/>
+		</Unit>
+		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp">
+			<Option target="ECEN4593"/>
+		</Unit>
+		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.h">
+			<Option target="ECEN4593"/>
+		</Unit>
+		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp">
+			<Option target="ECEN4593"/>
+		</Unit>
+		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h">
+			<Option target="ECEN4593"/>
+		</Unit>
+		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp">
+			<Option target="ECEN4593"/>
+		</Unit>
+		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h">
+			<Option target="ECEN4593"/>
+		</Unit>
 		<Unit filename="/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -81,17 +81,121 @@ CMakeFiles/ECEN4593.dir/main.cpp.o.provides: CMakeFiles/ECEN4593.dir/main.cpp.o.
 CMakeFiles/ECEN4593.dir/main.cpp.o.provides.build: CMakeFiles/ECEN4593.dir/main.cpp.o
 
 
+CMakeFiles/ECEN4593.dir/src/fetch.cpp.o: CMakeFiles/ECEN4593.dir/flags.make
+CMakeFiles/ECEN4593.dir/src/fetch.cpp.o: ../src/fetch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ECEN4593.dir/src/fetch.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ECEN4593.dir/src/fetch.cpp.o -c /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp
+
+CMakeFiles/ECEN4593.dir/src/fetch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ECEN4593.dir/src/fetch.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp > CMakeFiles/ECEN4593.dir/src/fetch.cpp.i
+
+CMakeFiles/ECEN4593.dir/src/fetch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ECEN4593.dir/src/fetch.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp -o CMakeFiles/ECEN4593.dir/src/fetch.cpp.s
+
+CMakeFiles/ECEN4593.dir/src/fetch.cpp.o.requires:
+
+.PHONY : CMakeFiles/ECEN4593.dir/src/fetch.cpp.o.requires
+
+CMakeFiles/ECEN4593.dir/src/fetch.cpp.o.provides: CMakeFiles/ECEN4593.dir/src/fetch.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/fetch.cpp.o.provides.build
+.PHONY : CMakeFiles/ECEN4593.dir/src/fetch.cpp.o.provides
+
+CMakeFiles/ECEN4593.dir/src/fetch.cpp.o.provides.build: CMakeFiles/ECEN4593.dir/src/fetch.cpp.o
+
+
+CMakeFiles/ECEN4593.dir/src/execute.cpp.o: CMakeFiles/ECEN4593.dir/flags.make
+CMakeFiles/ECEN4593.dir/src/execute.cpp.o: ../src/execute.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ECEN4593.dir/src/execute.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ECEN4593.dir/src/execute.cpp.o -c /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp
+
+CMakeFiles/ECEN4593.dir/src/execute.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ECEN4593.dir/src/execute.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp > CMakeFiles/ECEN4593.dir/src/execute.cpp.i
+
+CMakeFiles/ECEN4593.dir/src/execute.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ECEN4593.dir/src/execute.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp -o CMakeFiles/ECEN4593.dir/src/execute.cpp.s
+
+CMakeFiles/ECEN4593.dir/src/execute.cpp.o.requires:
+
+.PHONY : CMakeFiles/ECEN4593.dir/src/execute.cpp.o.requires
+
+CMakeFiles/ECEN4593.dir/src/execute.cpp.o.provides: CMakeFiles/ECEN4593.dir/src/execute.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/execute.cpp.o.provides.build
+.PHONY : CMakeFiles/ECEN4593.dir/src/execute.cpp.o.provides
+
+CMakeFiles/ECEN4593.dir/src/execute.cpp.o.provides.build: CMakeFiles/ECEN4593.dir/src/execute.cpp.o
+
+
+CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o: CMakeFiles/ECEN4593.dir/flags.make
+CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o: ../src/accessMem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o -c /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp
+
+CMakeFiles/ECEN4593.dir/src/accessMem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ECEN4593.dir/src/accessMem.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp > CMakeFiles/ECEN4593.dir/src/accessMem.cpp.i
+
+CMakeFiles/ECEN4593.dir/src/accessMem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ECEN4593.dir/src/accessMem.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp -o CMakeFiles/ECEN4593.dir/src/accessMem.cpp.s
+
+CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o.requires:
+
+.PHONY : CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o.requires
+
+CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o.provides: CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o.provides.build
+.PHONY : CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o.provides
+
+CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o.provides.build: CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o
+
+
+CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o: CMakeFiles/ECEN4593.dir/flags.make
+CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o: ../src/writeBack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o -c /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
+
+CMakeFiles/ECEN4593.dir/src/writeBack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ECEN4593.dir/src/writeBack.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp > CMakeFiles/ECEN4593.dir/src/writeBack.cpp.i
+
+CMakeFiles/ECEN4593.dir/src/writeBack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ECEN4593.dir/src/writeBack.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp -o CMakeFiles/ECEN4593.dir/src/writeBack.cpp.s
+
+CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o.requires:
+
+.PHONY : CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o.requires
+
+CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o.provides: CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ECEN4593.dir/build.make CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o.provides.build
+.PHONY : CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o.provides
+
+CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o.provides.build: CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o
+
+
 # Object files for target ECEN4593
 ECEN4593_OBJECTS = \
-"CMakeFiles/ECEN4593.dir/main.cpp.o"
+"CMakeFiles/ECEN4593.dir/main.cpp.o" \
+"CMakeFiles/ECEN4593.dir/src/fetch.cpp.o" \
+"CMakeFiles/ECEN4593.dir/src/execute.cpp.o" \
+"CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o" \
+"CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o"
 
 # External object files for target ECEN4593
 ECEN4593_EXTERNAL_OBJECTS =
 
 ECEN4593: CMakeFiles/ECEN4593.dir/main.cpp.o
+ECEN4593: CMakeFiles/ECEN4593.dir/src/fetch.cpp.o
+ECEN4593: CMakeFiles/ECEN4593.dir/src/execute.cpp.o
+ECEN4593: CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o
+ECEN4593: CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o
 ECEN4593: CMakeFiles/ECEN4593.dir/build.make
 ECEN4593: CMakeFiles/ECEN4593.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ECEN4593"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ECEN4593"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ECEN4593.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +204,10 @@ CMakeFiles/ECEN4593.dir/build: ECEN4593
 .PHONY : CMakeFiles/ECEN4593.dir/build
 
 CMakeFiles/ECEN4593.dir/requires: CMakeFiles/ECEN4593.dir/main.cpp.o.requires
+CMakeFiles/ECEN4593.dir/requires: CMakeFiles/ECEN4593.dir/src/fetch.cpp.o.requires
+CMakeFiles/ECEN4593.dir/requires: CMakeFiles/ECEN4593.dir/src/execute.cpp.o.requires
+CMakeFiles/ECEN4593.dir/requires: CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o.requires
+CMakeFiles/ECEN4593.dir/requires: CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o.requires
 
 .PHONY : CMakeFiles/ECEN4593.dir/requires
 
