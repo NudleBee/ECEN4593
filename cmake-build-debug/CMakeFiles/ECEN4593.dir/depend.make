@@ -6,6 +6,9 @@ CMakeFiles/ECEN4593.dir/main.cpp.o: ../main.cpp
 CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o: ../src/accessMem.cpp
 CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o: ../src/accessMem.h
 
+CMakeFiles/ECEN4593.dir/src/decode.cpp.o: ../src/decode.cpp
+CMakeFiles/ECEN4593.dir/src/decode.cpp.o: ../src/decode.h
+
 CMakeFiles/ECEN4593.dir/src/execute.cpp.o: ../src/execute.cpp
 CMakeFiles/ECEN4593.dir/src/execute.cpp.o: ../src/execute.h
 
