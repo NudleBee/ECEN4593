@@ -11,7 +11,7 @@
 using namespace std;
 
 void fetch(int *i){
-    int op = (instMem[i] >> 26) & 0xFC000000;
+    int op = (instMem[i] >> opCode_SHIFT) & opCode_MASK;
     cout << op << '\n';
     return;
 }

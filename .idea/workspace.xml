@@ -11,16 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70bc74cc-3ea3-4d50-80ce-db7f4345ef29" name="Default" comment="Update initilization (read file in) and rstructured the main code">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ECEN4593.dir/main.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/ECEN4593" afterPath="" />
+    <list default="true" id="70bc74cc-3ea3-4d50-80ce-db7f4345ef29" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decode.h" afterPath="$PROJECT_DIR$/src/decode.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fetch.cpp" afterPath="$PROJECT_DIR$/src/fetch.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fetch.h" afterPath="$PROJECT_DIR$/src/fetch.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/initalization.cpp" afterPath="$PROJECT_DIR$/src/initalization.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/initalization.h" afterPath="$PROJECT_DIR$/src/initalization.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fetch.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fetch.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fetch.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+            <state relative-caret-position="210">
+              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
               <folding>
                 <element signature="e#122#140#0" expanded="true" />
               </folding>
@@ -119,7 +112,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -149,8 +142,8 @@
         <option value="$PROJECT_DIR$/src/initalization.h" />
         <option value="$PROJECT_DIR$/src/decode.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/src/fetch.cpp" />
         <option value="$PROJECT_DIR$/src/fetch.h" />
+        <option value="$PROJECT_DIR$/src/fetch.cpp" />
       </list>
     </option>
   </component>
@@ -440,7 +433,7 @@
       <updated>1493079708500</updated>
       <workItem from="1493079710647" duration="1276000" />
       <workItem from="1493090935506" duration="1732000" />
-      <workItem from="1493142060698" duration="18912000" />
+      <workItem from="1493142060698" duration="19028000" />
     </task>
     <task id="LOCAL-00001" summary="Adding source and header files">
       <created>1493091881157</created>
@@ -477,11 +470,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493183508200</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update initilization (read file in) and rstructured the main code">
+      <created>1493186607423</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1493186607423</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21920000" />
+    <option name="totallyTimeSpent" value="22036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="43" width="1400" height="773" extended-state="0" />
@@ -664,16 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/initalization.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -708,21 +698,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetch.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding>
-            <element signature="e#122#140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fetch.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#122#140#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
