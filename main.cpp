@@ -5,17 +5,17 @@
 
 using namespace std;
 
-int *inst, *clk, *CPI, *Ihit, *Dhit;
+int inst, clk, CPI, *Ihit, Dhit;
 extern int pc;
 
 int main() {
 
     int counter = readFile("../src/Program1File1.txt");
 
-    for(int i = 0; i >= counter; i++){
-        int cmd = fetch(i);
+    for(int pc = 0; pc <= counter; pc++){
+        fetch(&pc);
+        //cout << cmd << '\n';
     }
-
 
     return 0;
 }

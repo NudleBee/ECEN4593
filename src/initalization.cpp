@@ -9,12 +9,10 @@
 
 using namespace std;
 
-extern string *instMem;
-
 int readFile(string fileName){
     //Read in program files, and initialize the instruction memory (instMem)
     string wrd, tmp;
-    string *instMem;
+
     int c = 0;
     ifstream program;
     program.open (fileName);
@@ -25,7 +23,7 @@ int readFile(string fileName){
     }
     else cout << "Couldn't open file" << '\n';
 
-    instMem = new string [c];
+    instMem = new int [c];
     program.close();
 
     program.open (fileName);
@@ -33,8 +31,8 @@ int readFile(string fileName){
         int i = 0;
         while (getline(program, wrd, ',')) {
             getline(program, tmp);
-            instMem[i] = wrd;
-            cout << i << " " << instMem[i] << '\n';
+            instMem[i] = stoul(wrd, nullptr, 16);
+            //cout << i << " " << wrd << " " << instMem[i] << '\n';
             i++;
         }
     }

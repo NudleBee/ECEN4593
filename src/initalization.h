@@ -5,6 +5,7 @@
 
 using namespace std;
 
+extern int *instMem;
 
 #ifndef ECEN4593_INITALIZATION_H
 #define ECEN4593_INITALIZATION_H

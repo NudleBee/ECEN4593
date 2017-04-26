@@ -10,6 +10,8 @@
 
 using namespace std;
 
-int fetch(int pc){
-    return 0;
+void fetch(int *i){
+    int op = (instMem[i] >> 26) & 0xFC000000;
+    cout << op << '\n';
+    return;
 }
