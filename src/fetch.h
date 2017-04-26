@@ -9,29 +9,29 @@
 
 using namespace std;
 
-struct rType {
-    int opcode;
-    int rs;
-    int rt;
-    int rd;
-    int shamt;
-    int funct;
+struct instFormat {
+    uint32_t opCode;
+    uint32_t rs;
+    uint32_t rt;
+    uint32_t rd;
+    uint32_t shamt;
+    uint32_t funct;
+    uint32_t imm;
+    uint32_t add;
+    bool rType;
 
 };
 
-struct iType {
-    int opcode;
-    int rs;
-    int rt;
-    uint16_t imm;
-};
+#define r_type 0x00
 
-#define opCode_MASK 0xFC000000
-#define rs_MASK 0x03E00000
-#define rt_MASK 0x001F0000
-#define rd_MASK 0x0000F800
-#define shamt_MASK 0x000007C0
+#define opCode_MASK 0x0000003F
+#define rs_MASK 0x0000001F
+#define rt_MASK 0x0000001F
+#define rd_MASK 0x0000001F
+#define shamt_MASK 0x0000003F
 #define funct_MASK 0x0000003F
+#define imm_MASK 0x0000FFFF
+#define add_MASK 0x03FFFFFF
 
 #define opCode_SHIFT 26
 #define rs_SHIFT 21
@@ -39,11 +39,10 @@ struct iType {
 #define rd_SHIFT 11
 #define shamt_SHIFT 6
 
-
 void assignRType();
 
 void assignIType();
 
-void fetch(int *i);
+void fetch(int i, uint32_t *inst);
 
 #endif //ECEN4593_FETCH_H

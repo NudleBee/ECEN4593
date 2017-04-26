@@ -2,20 +2,32 @@
 #include "src/initalization.cpp"
 #include "src/fetch.cpp"
 
-
 using namespace std;
 
-int inst, clk, CPI, *Ihit, Dhit;
-extern int pc;
+uint32_t instMem[500];
+int sp, fp, pc;
+int reg[32];
+int clk, CPI, *Ihit, Dhit;
 
 int main() {
 
-    int counter = readFile("../src/Program1File1.txt");
+    int counter = readFile("../src/Program1File1.txt", instMem);
 
-    for(int pc = 0; pc <= counter; pc++){
-        fetch(&pc);
-        //cout << cmd << '\n';
+    sp = instMem[0];
+    fp = instMem[1];
+    pc = instMem[5];
+
+    //shove instruction through a loop
+    for(int instI = 10; instI <= counter; instI++){
+        //cout << instMem[instI] << '\n';
+        fetch(instI, instMem);
+        //cout << Instruction[instI].opCode << ' ' <<  Instruction[instI].rType << '\n';
+
+
+
     }
+
+
 
     return 0;
 }

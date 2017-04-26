@@ -9,34 +9,21 @@
 
 using namespace std;
 
-int readFile(string fileName){
+int readFile(string fileName, uint32_t *inst){
     //Read in program files, and initialize the instruction memory (instMem)
     string wrd, tmp;
-
-    int c = 0;
     ifstream program;
-    program.open (fileName);
-    if (program.is_open()) {
-        while (getline(program, tmp)) {
-            c = c + 1;
-        }
-    }
-    else cout << "Couldn't open file" << '\n';
-
-    instMem = new int [c];
-    program.close();
-
+    int i = 0;
     program.open (fileName);
     if(program.is_open()) {
-        int i = 0;
         while (getline(program, wrd, ',')) {
             getline(program, tmp);
-            instMem[i] = stoul(wrd, nullptr, 16);
-            //cout << i << " " << wrd << " " << instMem[i] << '\n';
+            inst[i] = stoul(wrd, nullptr, 16);
+            //cout << i << " " << wrd << " " << inst[i] << '\n';
             i++;
         }
     }
     else cout << "Couldn't open file" << '\n';
 
-    return c;
+    return i;
 }

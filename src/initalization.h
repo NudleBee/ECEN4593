@@ -5,13 +5,11 @@
 
 using namespace std;
 
-extern int *instMem;
-
 #ifndef ECEN4593_INITALIZATION_H
 #define ECEN4593_INITALIZATION_H
 
 
-int readFile(string fileName);
+int readFile(string fileName, uint32_t *inst);
 
 
 #endif //ECEN4593_INITALIZATION_H
