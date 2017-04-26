@@ -10,13 +10,6 @@
 using namespace std;
 
 
-string fetch(int pc);
-
-int readFile(string fileName);
-
-
-
-
-
+int fetch(int i);
 
 #endif //ECEN4593_FETCH_H

@@ -3,18 +3,7 @@
 
 CMakeFiles/ECEN4593.dir/main.cpp.o
  /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/main.cpp
-CMakeFiles/ECEN4593.dir/src/accessMem.cpp.o
- /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp
- /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.h
-CMakeFiles/ECEN4593.dir/src/decode.cpp.o
- /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.cpp
- /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.h
-CMakeFiles/ECEN4593.dir/src/execute.cpp.o
- /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp
- /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.h
-CMakeFiles/ECEN4593.dir/src/fetch.cpp.o
  /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp
  /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
-CMakeFiles/ECEN4593.dir/src/writeBack.cpp.o
- /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
- /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h
+ /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.cpp
+ /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h

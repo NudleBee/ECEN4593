@@ -4,4 +4,4 @@
 
 #include "decode.h"
 
-//Branch Detection
+//Branch Detection (update pc)

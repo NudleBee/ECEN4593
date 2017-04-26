@@ -9,36 +9,32 @@
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/main.cpp
 iostream
 -
-fstream
--
-
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp
-accessMem.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.h
-
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.h
-
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.cpp
-decode.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.h
-
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.h
-
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp
-execute.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.h
-
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.h
+src/initalization.cpp
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.cpp
+src/fetch.cpp
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp
 
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp
 fetch.h
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
+iostream
+-
+fstream
+-
 
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
+iostream
+-
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
-writeBack.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.cpp
+iostream
+-
+fstream
+-
+initalization.h
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
+iostream
+-
 
