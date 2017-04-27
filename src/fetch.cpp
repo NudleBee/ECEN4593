@@ -21,14 +21,14 @@ void fetch(int i, uint32_t *inst){
         Instruction[i].shamt = (inst[i] >> shamt_SHIFT) & shamt_MASK;
         Instruction[i].funct = inst[i] & funct_MASK;
         Instruction[i].imm = 0;
-        Instruction[i].add = 0;
+        Instruction[i].address = 0;
     }
     else {
         Instruction[i].rType = false;
         Instruction[i].rs = (inst[i] >> rs_SHIFT) & rs_MASK;
         Instruction[i].rt = (inst[i] >> rt_SHIFT) & rt_MASK;
         Instruction[i].imm = inst[i] & imm_MASK;
-        Instruction[i].add = inst[i] & add_MASK;
+        Instruction[i].address = inst[i] & add_MASK;
     }
 
 

@@ -16,8 +16,8 @@ struct instFormat {
     uint32_t rd;
     uint32_t shamt;
     uint32_t funct;
-    uint32_t imm;
-    uint32_t add;
+    int imm;
+    uint32_t address;
     bool rType;
 
 };
@@ -43,6 +43,6 @@ void assignRType();
 
 void assignIType();
 
-void fetch(int i, uint32_t *inst);
+void fetch(int i, int *inst);
 
 #endif //ECEN4593_FETCH_H
