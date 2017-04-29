@@ -16,95 +16,121 @@ int decode(instFormat instr){
     switch(instr.opCode) {
         case 0x00:
             switch (instr.funct){
-                case add: reg[instr.rd] = ADD(reg[instr.rs], reg[instr.rt]);
+                case add: cout << "add" << '\n';
+                    reg[instr.rd] = ADD(reg[instr.rs], reg[instr.rt]);
                     break;
-                case addu: reg[instr.rd] = ADDU(reg[instr.rs], reg[instr.rt]);
+                case addu: cout << "addu" << '\n';
+                    reg[instr.rd] = ADDU(reg[instr.rs], reg[instr.rt]);
                     break;
-                case and_f: reg[instr.rd] = AND_F(reg[instr.rs], reg[instr.rt]);
+                case and_f: cout << "and_f" << '\n';
+                    reg[instr.rd] = AND_F(reg[instr.rs], reg[instr.rt]);
                     break;
-                case nor: reg[instr.rd] = NOR(reg[instr.rs], reg[instr.rt]);
+                case nor: cout << "nor" << '\n';
+                    reg[instr.rd] = NOR(reg[instr.rs], reg[instr.rt]);
                     break;
-                case or_f: reg[instr.rd] = OR_F(reg[instr.rs], reg[instr.rt]);
+                case or_f: cout << "or_f" << '\n';
+                    reg[instr.rd] = OR_F(reg[instr.rs], reg[instr.rt]);
                     break;
-                case movn: if(reg[instr.rt] != 0){
+                case movn: cout << "movn" << '\n';
+                    if(reg[instr.rt] != 0){
                         reg[instr.rd] = reg[instr.rs];
                     }
                     break;
-                case movz: if(reg[instr.rt] == 0){
+                case movz: cout << "movz" << '\n';
+                    if(reg[instr.rt] == 0){
                         reg[instr.rd] = reg[instr.rs];
                     }
                     break;
-                case slt: reg[instr.rd] = SLT(reg[instr.rs], reg[instr.rt]);
+                case slt: cout << "slt" << '\n';
+                    reg[instr.rd] = SLT(reg[instr.rs], reg[instr.rt]);
                     break;
-                case sltu: reg[instr.rd] = SLTU(reg[instr.rs], reg[instr.rt]);
+                case sltu: cout << "sltu" << '\n';
+                    reg[instr.rd] = SLTU(reg[instr.rs], reg[instr.rt]);
                     break;
-                case sll: reg[instr.rd] = SLL(reg[instr.rt], instr.shamt);
+                case sll: cout << "sll" << '\n';
+                    reg[instr.rd] = SLL(reg[instr.rt], instr.shamt);
                     break;
-                case srl: reg[instr.rd] = SRL(reg[instr.rt], instr.shamt);
+                case srl: cout << "srl" << '\n';
+                    reg[instr.rd] = SRL(reg[instr.rt], instr.shamt);
                     break;
-                case sub: reg[instr.rd] = SUB(reg[instr.rs], reg[instr.rt]);
+                case sub: cout << "sub" << '\n';
+                    reg[instr.rd] = SUB(reg[instr.rs], reg[instr.rt]);
                     break;
-                case subu: reg[instr.rd] = SUBU(reg[instr.rs], reg[instr.rt]);
+                case subu: cout << "subu" << '\n';
+                    reg[instr.rd] = SUBU(reg[instr.rs], reg[instr.rt]);
                     break;
-                case xor_f: reg[instr.rd] = XOR_F(reg[instr.rs], reg[instr.rt]);
+                case xor_f: cout << "xor_f" << '\n';
+                    reg[instr.rd] = XOR_F(reg[instr.rs], reg[instr.rt]);
                     break;
-                case jr: return reg[instr.rs];
+                case jr: cout << "jr" << '\n';
+                    return reg[instr.rs];
             }
             break;
-        case addi: reg[instr.rt] = ADDI(reg[instr.rs], instr.imm);
+        case addi: cout << "addi" << '\n';
+            reg[instr.rt] = ADDI(reg[instr.rs], instr.imm);
             break;
-        case addui: reg[instr.rt] = ADDUI(reg[instr.rs], instr.imm);
+        case addui: cout << "addui" << '\n';
+            reg[instr.rt] = ADDUI(reg[instr.rs], instr.imm);
             break;
-        case andi: reg[instr.rt] = ANDI(reg[instr.rs], instr.imm);
+        case andi: cout << "andi" << '\n';
+            reg[instr.rt] = ANDI(reg[instr.rs], instr.imm);
             break;
-        case xori: reg[instr.rt] = XORI(reg[instr.rs], instr.imm);
+        case xori: cout << "xori" << '\n';
+            reg[instr.rt] = XORI(reg[instr.rs], instr.imm);
             break;
-        case beq: if(BEQ(reg[instr.rs], reg[instr.rt])){
+        case beq: cout << "beq" << '\n';
+            if(BEQ(reg[instr.rs], reg[instr.rt])){
                 return instr.imm;
             }
             break;
-        case bne: if(BNE(reg[instr.rs], reg[instr.rt])){
+        case bne: cout << "bne" << '\n';
+            if(BNE(reg[instr.rs], reg[instr.rt])){
                 return instr.imm;
             }
             break;
-        case bgtz: if(BGTZ(reg[instr.rs])){
+        case bgtz: cout << "bgtz" << '\n';
+            if(BGTZ(reg[instr.rs])){
                 return instr.imm;
             }
             break;
-        case bltz: if(BLTZ(reg[instr.rs])){
+        case bltz: cout << "bltz" << '\n';
+            if(BLTZ(reg[instr.rs])){
                 return instr.imm;
             }
             break;
-        case blez: if(BLEZ(reg[instr.rs])){
+        case blez: cout << "blez" << '\n';
+            if(BLEZ(reg[instr.rs])){
                 return instr.imm;
             }
             break;
-        case j: return instr.address;
-        case jal:
+        case j: cout << "j" << '\n';
+            return instr.address;
+        case jal: cout << "jal" << '\n';
             break;
-        case lb:
+        case lb: cout << "lb" << '\n';
             break;
-        case lbu:
+        case lbu: cout << "lbu" << '\n';
             break;
-        case lhu:
+        case lhu: cout << "lhu" << '\n';
             break;
-        case lui:
+        case lui: cout << "lui" << '\n';
             break;
-        case lw:
+        case lw: cout << "lw" << '\n';
             break;
-        case ori:
+        case ori: cout << "ori" << '\n';
             break;
-        case slti:
+        case slti: cout << "stli" << '\n';
+            reg[instr.rt] = SLTI(reg[instr.rs], instr.imm);
             break;
-        case sltiu:
+        case sltiu: cout << "sltiu" << '\n';
             break;
-        case sb:
+        case sb: cout << "sb" << '\n';
             break;
-        case sh:
+        case sh: cout << "sh" << '\n';
             break;
-        case sw:
+        case sw: cout << "sw" << '\n';
             break;
-        case seb:
+        case seb: cout << "seb" << '\n';
             break;
     }
 

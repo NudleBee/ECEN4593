@@ -64,11 +64,13 @@ int XOR_F(int rs, int rt){
 }
 
 int ADDI(int rs, int imm){
-    return rs + imm;
+    int sEimm = signExtension(imm);
+    return rs + sEimm;
 }
 
 int ADDUI(int rs, uint32_t imm){
-    return rs + imm;
+    int sEimm = signExtension(imm);
+    return rs + sEimm;
 }
 
 int ANDI(int rs, int imm){
@@ -76,7 +78,8 @@ int ANDI(int rs, int imm){
 }
 
 int XORI(int rs, int imm){
-    return rs^imm;
+    int sEimm = signExtension(imm);
+    return rs^sEimm;
 }
 
 bool BEQ(int rs, int rt){
@@ -120,45 +123,79 @@ int LB(){
 }
 
 int LBU(){
+    //int sEimm = signExtension(imm);
+
 
 }
 
 int LHU(){
+    //int sEimm = signExtension(imm);
+
 
 }
 
 int LUI(){
+   // int sEimm = signExtension(imm);
+
 
 }
 
 int LW(){
+    //int sEimm = signExtension(imm);
+
 
 }
 
-int ORI(){
+int ORI(int rs, int imm){
+    return rs | imm;
+
 
 }
 
-int SLTI(){
+int SLTI(int rs, int imm){
+    int sEimm = signExtension(imm);
+    if(rs < sEimm){
+        return 1;
+    }
+    return 0;
 
 }
 
-int SLTIU(){
-
+int SLTIU(int rs, uint32_t imm){
+    int sEimm = signExtension(imm);
+    if(rs < sEimm){
+        return 1;
+    }
+    return 0;
 }
 
 int SB(){
+    //int sEimm = signExtension(imm);
+
 
 }
 
 int SH(){
+    //int sEimm = signExtension(imm);
+
 
 }
 
 int SW(){
+    //int sEimm = signExtension(imm);
+
 
 }
 
 int SEB(){
 
+}
+
+int signExtension(int i) {
+    int value = (0x0000FFFF & i);
+    int mask = 0x00008000;
+    if (mask & i) {
+        value += 0xFFFF0000;
+    }
+    return value;
 }

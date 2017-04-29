@@ -8,8 +8,8 @@
 0x00000000,
 0x00000000,
 0x00000000,
-0x18c00008,   // 	blez	a2,400854 <copy_array+0x24>
-0x00801025,   // 	move	v0,a0
+0x18c00008,   // 	blez	a2,400854 <copy_array+0x24>  BLEZ $a2 0x0008
+0x00801025,   // 	move	v0,a0 OR $v0 $a0 $zero
 0x00063080,   // 	sll	a2,a2,0x2
 0x00862021,   // 	addu	a0,a0,a2
 0x8c430000,   // 	lw	v1,0(v0)
@@ -179,7 +179,7 @@
 0xac020024,	  //	sw $v0, 36($zero)	if 0, the two arrays are equal, 1 they are not equal
 0x8c0804b0,	  //	lw $t0, 1200($zero)	Using the data in memory location 300 to verify sort
 0xac080018,	  //	sw $t0, 24($zero)
-0x8c001018,	  //	flush cache to memory to view via memory
+0x8c001018,	  //	flush cache to memory to view via memory LW $zero 0x1018 $zero
 0x8c00101c,	  //	flush cache to memory to view via memory
 0x8c001020,	  //	flush cache to memory to view via memory
 0x8c001024,	  //	flush cache to memory to view via memory

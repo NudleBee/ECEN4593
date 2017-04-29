@@ -3,6 +3,10 @@
 
 CMakeFiles/ECEN4593.dir/main.cpp.o
  /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/main.cpp
+ /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.cpp
+ /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.h
+ /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp
+ /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.h
  /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp
  /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
  /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.cpp

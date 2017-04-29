@@ -30,7 +30,9 @@ int LHU();
 int LUI();
 int LW();
 int ORI();
-int SLTI();
+
+int SLTI(int rs, int imm);
+
 int SLTIU();
 int SB();
 int SH();
@@ -63,6 +65,7 @@ int SUBU(uint32_t rs, uint32_t rt);
 
 int XOR_F(int rs, int rt);
 
+int signExtension(int i);
 
 
 //Weird types
