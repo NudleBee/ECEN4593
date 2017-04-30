@@ -4,6 +4,8 @@
 
 #include "execute.h"
 
+int reg[32] = {0};
+int mainMemory[1200] = {0};
 
 int ADD(int rs, int rt){
     return rs + rs;
@@ -64,13 +66,11 @@ int XOR_F(int rs, int rt){
 }
 
 int ADDI(int rs, int imm){
-    int sEimm = signExtension(imm);
-    return rs + sEimm;
+    return rs + imm;
 }
 
 int ADDUI(int rs, uint32_t imm){
-    int sEimm = signExtension(imm);
-    return rs + sEimm;
+    return rs + imm;
 }
 
 int ANDI(int rs, int imm){
@@ -78,8 +78,7 @@ int ANDI(int rs, int imm){
 }
 
 int XORI(int rs, int imm){
-    int sEimm = signExtension(imm);
-    return rs^sEimm;
+    return rs^imm;
 }
 
 bool BEQ(int rs, int rt){
@@ -118,77 +117,106 @@ bool BLEZ(int rs){
     else false;
 }
 
-int LB(){
-
+int LB(int rt, int rs, int imm){
+    int index = (imm + reg[rs]) / 4;
+    int pos = (imm + reg[rs]) % 4;
+    switch(pos) {
+        case 0:
+            reg[rt] = (reg[rt] & byte0) & ((mainMemory[index] & byte0));
+            break;
+        case 1:
+            reg[rt] = (reg[rt] & byte1) & ((mainMemory[index] & byte0) << shift8);
+            break;
+        case 2:
+            reg[rt] = (reg[rt] & byte2) & ((mainMemory[index] & byte0) << shift16);
+            break;
+        case 3:
+            reg[rt] = (reg[rt] & byte3) & ((mainMemory[index] & byte0) << shift24);
+            break;
+    }
 }
 
-int LBU(){
-    //int sEimm = signExtension(imm);
-
-
+int LBU(int rt, int rs, uint32_t imm){
+    int index = (imm + reg[rs]) / 4;
+    int pos = (imm + reg[rs]) % 4;
+    switch(pos) {
+        case 0:
+            reg[rt] = (reg[rt] & byte0) & ((mainMemory[index] & byte0));
+            break;
+        case 1:
+            reg[rt] = (reg[rt] & byte1) & ((mainMemory[index] & byte0) << shift8);
+            break;
+        case 2:
+            reg[rt] = (reg[rt] & byte2) & ((mainMemory[index] & byte0) << shift16);
+            break;
+        case 3:
+            reg[rt] = (reg[rt] & byte3) & ((mainMemory[index] & byte0) << shift24);
+            break;
+    }
 }
 
-int LHU(){
-    //int sEimm = signExtension(imm);
-
-
-}
-
-int LUI(){
-   // int sEimm = signExtension(imm);
-
-
-}
-
-int LW(){
-    //int sEimm = signExtension(imm);
-
-
+int LHU(int rt, int rs, uint32_t imm){
+    int index = (imm + reg[rs]) / 4;
+    int pos = (imm + reg[rs]) % 2;
+    switch(pos) {
+        case 0:
+            reg[rt] = (reg[rt] & hwrd0) & ((mainMemory[index] & hwrd0));
+            break;
+        case 1:
+            reg[rt] = (reg[rt] & hwrd1) & ((mainMemory[index] & byte0) << shift16);
+            break;
+    }
 }
 
 int ORI(int rs, int imm){
     return rs | imm;
-
-
 }
 
 int SLTI(int rs, int imm){
-    int sEimm = signExtension(imm);
-    if(rs < sEimm){
+    if(rs < imm){
         return 1;
     }
     return 0;
-
 }
 
 int SLTIU(int rs, uint32_t imm){
-    int sEimm = signExtension(imm);
-    if(rs < sEimm){
+    if(rs < imm){
         return 1;
     }
     return 0;
 }
 
-int SB(){
-    //int sEimm = signExtension(imm);
-
+int SB(int rt, int rs, int imm){
+    int index = (imm + reg[rs]) / 4;
+    int pos = (imm + reg[rs]) % 4;
+    switch(pos){
+        case 0:
+            mainMemory[index] = (mainMemory[index] & byte0) & (reg[rt] & byte0);
+            break;
+        case 1:
+            mainMemory[index] = (mainMemory[index] & byte1) & ((reg[rt] & byte0) << shift8);
+            break;
+        case 2:
+            mainMemory[index] = (mainMemory[index] & byte2) & ((reg[rt] & byte0) << shift16);
+            break;
+        case 3:
+            mainMemory[index] = (mainMemory[index] & byte3) & ((reg[rt] & byte0) << shift24);
+            break;
+    }
 
 }
 
-int SH(){
-    //int sEimm = signExtension(imm);
-
-
-}
-
-int SW(){
-    //int sEimm = signExtension(imm);
-
-
-}
-
-int SEB(){
-
+int SH(int rt, int rs, int imm){
+    int index = (imm + rs) / 4;
+    int pos = (imm + rs) % 2;
+    switch(pos) {
+        case 0:
+            mainMemory[index] = (mainMemory[index] & hwrd0) & (reg[rt] & hwrd0);
+            break;
+        case 1:
+            mainMemory[index] = (mainMemory[index] & hwrd1) & ((reg[rt] & hwrd1) << shift16);
+            break;
+    }
 }
 
 int signExtension(int i) {

@@ -10,9 +10,7 @@ using namespace std;
 
 //Branch Detection (update pc)
 
-int reg[32] = {0};
-
-int decode(instFormat instr){
+int decode(instFormat instr, int programCounter){
     switch(instr.opCode) {
         case 0x00:
             switch (instr.funct){
@@ -63,7 +61,9 @@ int decode(instFormat instr){
                     reg[instr.rd] = XOR_F(reg[instr.rs], reg[instr.rt]);
                     break;
                 case jr: cout << "jr" << '\n';
+                    cout << reg[instr.rs] << '\n';
                     return reg[instr.rs];
+
             }
             break;
         case addi: cout << "addi" << '\n';
@@ -85,39 +85,47 @@ int decode(instFormat instr){
             break;
         case bne: cout << "bne" << '\n';
             if(BNE(reg[instr.rs], reg[instr.rt])){
-                return instr.imm;
+                return programCounter + instr.imm;
             }
             break;
         case bgtz: cout << "bgtz" << '\n';
             if(BGTZ(reg[instr.rs])){
-                return instr.imm;
+                return programCounter + instr.imm;
             }
             break;
         case bltz: cout << "bltz" << '\n';
             if(BLTZ(reg[instr.rs])){
-                return instr.imm;
+                return programCounter + instr.imm;
             }
             break;
         case blez: cout << "blez" << '\n';
             if(BLEZ(reg[instr.rs])){
-                return instr.imm;
+                return programCounter + instr.imm;
             }
             break;
         case j: cout << "j" << '\n';
             return instr.address;
         case jal: cout << "jal" << '\n';
-            break;
+            reg[31] = programCounter + 8;
+            return instr.address;
         case lb: cout << "lb" << '\n';
+            LB(instr.rt, instr.rs, instr.imm);
             break;
         case lbu: cout << "lbu" << '\n';
+            LBU(instr.rt, instr.rs, instr.imm);
             break;
         case lhu: cout << "lhu" << '\n';
+            LHU(instr.rt, instr.rs, instr.imm);
             break;
         case lui: cout << "lui" << '\n';
+            reg[instr.rt] = signExtension(instr.imm | 0xFFFF);
             break;
         case lw: cout << "lw" << '\n';
+            cout << (reg[instr.rs] + instr.imm) / 4 << '\n';
+            reg[instr.rt] = mainMemory[(reg[instr.rs] + instr.imm) / 4];
             break;
         case ori: cout << "ori" << '\n';
+            reg[instr.rt] = ORI(instr.rs, instr.imm);
             break;
         case slti: cout << "stli" << '\n';
             reg[instr.rt] = SLTI(reg[instr.rs], instr.imm);
@@ -129,11 +137,13 @@ int decode(instFormat instr){
         case sh: cout << "sh" << '\n';
             break;
         case sw: cout << "sw" << '\n';
+            mainMemory[(reg[instr.rs] + instr.imm) / 4] = reg[instr.rt];
             break;
         case seb: cout << "seb" << '\n';
+            reg[instr.rd] = signExtension(reg[instr.rt]);
             break;
     }
 
 
-    return 0;
+    return programCounter;
 }

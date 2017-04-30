@@ -3,7 +3,6 @@
 //Finds the next instruction from instruction memory. Converts into opcode,
 
 #include "fetch.h"
-
 #include <iostream>
 #include <fstream>
 

@@ -33,9 +33,6 @@
 #define seb 0x1F //
 #define jr 0x8 //special opCode, rs, 16bit of 0, 8
 
-
-
-
 // r types
 #define add 0x20
 #define addu 0x21
@@ -52,8 +49,20 @@
 #define subu 0x23
 #define xor_f 0x26
 
+//Load store shifts
+#define byte0 0xFFFFFF00
+#define byte1 0xFFFF00FF
+#define byte2 0xFF00FFFF
+#define byte3 0x00FFFFFF
 
-int decode(instFormat instr);
+#define hwrd0 0xFFFF0000
+#define hwrd1 0x0000FFFF
+
+#define shift8 8
+#define shift16 16
+#define shift24 24
+
+int decode(instFormat instr, int programCounter);
 
 
 #endif //ECEN4593_DECODE_H

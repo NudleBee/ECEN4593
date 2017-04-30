@@ -24,23 +24,23 @@ bool BLTZ(int rs);
 
 bool BLEZ(int rs);
 
-int LB();
-int LBU();
-int LHU();
-int LUI();
-int LW();
-int ORI();
+int LB(int rt, int rs, int imm);
+
+int LBU(int rt, int rs, uint32_t imm);
+
+int LHU(int rt, int rs, uint32_t imm);
+
+int ORI(int rs, int imm);
 
 int SLTI(int rs, int imm);
 
-int SLTIU();
-int SB();
-int SH();
-int SW();
+int SLTIU(int rs, uint32_t);
+
+int SB(int rt, int rs, int imm);
+
+int SH(int rt, int rs, int imm);
 
 //r types
-int NOP();
-
 int ADD(int rs, int rt);
 
 int ADDU(uint32_t rs, uint32_t rt);
@@ -66,9 +66,5 @@ int SUBU(uint32_t rs, uint32_t rt);
 int XOR_F(int rs, int rt);
 
 int signExtension(int i);
-
-
-//Weird types
-int SEB();
 
 #endif //ECEN4593_EXECUTE_H
