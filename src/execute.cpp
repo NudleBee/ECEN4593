@@ -11,13 +11,12 @@ int ADD(int rs, int rt){
     return rs + rs;
 }
 
-int ADDU(uint32_t rs, uint32_t rt){
+int ADDU(int rs, int rt){
     return rs + rt;
 }
 
 int AND_F(int rs, int rt){
     return rs & rs;
-
 }
 
 int NOR(int rs, int rt){
@@ -34,15 +33,13 @@ int SLT(int rs, int rt){
         return 1;
     }
     return 0;
-
 }
 
-int SLTU(uint32_t rs, uint32_t rt){
+int SLTU(int rs, int rt){
     if (rs < rt){
         return 1;
     }
     return 0;
-
 }
 
 int SLL(int rt, int shamt){
@@ -57,7 +54,7 @@ int SUB(int rs, int rt){
     return rs - rt;
 }
 
-int SUBU(uint32_t rs, uint32_t rt){
+int SUBU(int rs, int rt){
     return rs - rt;
 }
 
@@ -69,7 +66,8 @@ int ADDI(int rs, int imm){
     return rs + imm;
 }
 
-int ADDUI(int rs, uint32_t imm){
+int ADDUI(int rs, int imm){
+    cout << rs << "+" << imm << '\n';
     return rs + imm;
 }
 
@@ -136,7 +134,7 @@ int LB(int rt, int rs, int imm){
     }
 }
 
-int LBU(int rt, int rs, uint32_t imm){
+int LBU(int rt, int rs, int imm){
     int index = (imm + reg[rs]) / 4;
     int pos = (imm + reg[rs]) % 4;
     switch(pos) {
@@ -155,7 +153,7 @@ int LBU(int rt, int rs, uint32_t imm){
     }
 }
 
-int LHU(int rt, int rs, uint32_t imm){
+int LHU(int rt, int rs, int imm){
     int index = (imm + reg[rs]) / 4;
     int pos = (imm + reg[rs]) % 2;
     switch(pos) {
@@ -179,7 +177,7 @@ int SLTI(int rs, int imm){
     return 0;
 }
 
-int SLTIU(int rs, uint32_t imm){
+int SLTIU(int rs, int imm){
     if(rs < imm){
         return 1;
     }

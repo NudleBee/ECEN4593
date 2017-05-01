@@ -61,6 +61,7 @@
 #define shift8 8
 #define shift16 16
 #define shift24 24
+#define shift28 28
 
 int decode(instFormat instr, int programCounter);
 

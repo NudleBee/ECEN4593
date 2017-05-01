@@ -9,7 +9,7 @@
 
 using namespace std;
 
-int readFile(string fileName, uint32_t *inst){
+int readFile(string fileName, int *inst){
     //Read in program files, and initialize the instruction memory (instMem)
     string wrd, tmp;
     ifstream program;

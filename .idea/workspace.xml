@@ -14,11 +14,11 @@
     <list default="true" id="70bc74cc-3ea3-4d50-80ce-db7f4345ef29" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decode.cpp" afterPath="$PROJECT_DIR$/src/decode.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decode.h" afterPath="$PROJECT_DIR$/src/decode.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/execute.cpp" afterPath="$PROJECT_DIR$/src/execute.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/execute.h" afterPath="$PROJECT_DIR$/src/execute.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fetch.cpp" afterPath="$PROJECT_DIR$/src/fetch.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/initalization.cpp" afterPath="$PROJECT_DIR$/src/initalization.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,10 +31,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
+            <state relative-caret-position="160">
               <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -46,8 +46,8 @@
       <file leaf-file-name="fetch.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fetch.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+            <state relative-caret-position="523">
+              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
               <folding>
                 <element signature="e#122#140#0" expanded="true" />
               </folding>
@@ -58,8 +58,8 @@
       <file leaf-file-name="decode.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/decode.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="64" column="49" lean-forward="true" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+            <state relative-caret-position="-6">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,18 +68,18 @@
       <file leaf-file-name="execute.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/execute.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-407">
-              <caret line="178" column="13" lean-forward="false" selection-start-line="178" selection-start-column="13" selection-end-line="178" selection-end-column="13" />
+            <state relative-caret-position="615">
+              <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decode.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="decode.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/decode.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1497">
-              <caret line="147" column="26" lean-forward="true" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
+            <state relative-caret-position="1635">
+              <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
               <folding>
                 <element signature="e#49#68#0" expanded="true" />
               </folding>
@@ -90,8 +90,8 @@
       <file leaf-file-name="Program1File1.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Program1File1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-116">
-              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="10" />
+            <state relative-caret-position="-122">
+              <caret line="140" column="8" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -100,8 +100,8 @@
       <file leaf-file-name="execute.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/execute.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="-7">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,8 +110,8 @@
       <file leaf-file-name="fetch.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fetch.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+            <state relative-caret-position="284">
+              <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -120,8 +120,8 @@
       <file leaf-file-name="initalization.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/initalization.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+            <state relative-caret-position="300">
+              <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
               <folding>
                 <element signature="e#49#67#0" expanded="true" />
               </folding>
@@ -153,16 +153,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/initalization.cpp" />
         <option value="$PROJECT_DIR$/src/initalization.h" />
         <option value="$PROJECT_DIR$/src/fetch.h" />
         <option value="$PROJECT_DIR$/src/Program1File1.txt" />
-        <option value="$PROJECT_DIR$/src/fetch.cpp" />
-        <option value="$PROJECT_DIR$/src/execute.h" />
-        <option value="$PROJECT_DIR$/src/decode.h" />
-        <option value="$PROJECT_DIR$/src/execute.cpp" />
         <option value="$PROJECT_DIR$/src/decode.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/src/decode.h" />
+        <option value="$PROJECT_DIR$/src/execute.h" />
+        <option value="$PROJECT_DIR$/src/initalization.cpp" />
+        <option value="$PROJECT_DIR$/src/execute.cpp" />
+        <option value="$PROJECT_DIR$/src/fetch.cpp" />
       </list>
     </option>
   </component>
@@ -504,11 +504,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493279233991</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ALl execute functions written. Debugging jumps, load, and stores.">
+      <created>1493513144186</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1493513144186</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63377000" />
+    <option name="totallyTimeSpent" value="69741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="29" y="23" width="1400" height="797" extended-state="0" />
@@ -580,7 +587,8 @@
     <MESSAGE value="Restructuring" />
     <MESSAGE value="Update initilization (read file in) and rstructured the main code" />
     <MESSAGE value="Adding decode stage and writing execute functions. Also added global variable reg to keep track of the registers changed by the instructions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding decode stage and writing execute functions. Also added global variable reg to keep track of the registers changed by the instructions." />
+    <MESSAGE value="ALl execute functions written. Debugging jumps, load, and stores." />
+    <option name="LAST_COMMIT_MESSAGE" value="ALl execute functions written. Debugging jumps, load, and stores." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -933,82 +941,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/initalization.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding>
-            <element signature="e#49#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Program1File1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="10" />
+        <state relative-caret-position="-122">
+          <caret line="140" column="8" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fetch.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        <state relative-caret-position="284">
+          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/execute.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="-7">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/src/initalization.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#49#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetch.cpp">
+    <entry file="file://$PROJECT_DIR$/src/decode.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        <state relative-caret-position="1635">
+          <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
           <folding>
-            <element signature="e#122#140#0" expanded="true" />
+            <element signature="e#49#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/decode.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="64" column="49" lean-forward="true" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+        <state relative-caret-position="-6">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/execute.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-407">
-          <caret line="178" column="13" lean-forward="false" selection-start-line="178" selection-start-column="13" selection-end-line="178" selection-end-column="13" />
+        <state relative-caret-position="615">
+          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/decode.cpp">
+    <entry file="file://$PROJECT_DIR$/src/fetch.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1497">
-          <caret line="147" column="26" lean-forward="true" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
+        <state relative-caret-position="523">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
-            <element signature="e#49#68#0" expanded="true" />
+            <element signature="e#122#140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

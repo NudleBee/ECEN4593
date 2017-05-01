@@ -10,7 +10,7 @@ instFormat Instruction[500];
 
 using namespace std;
 
-void fetch(int i, uint32_t *inst){
+void fetch(int i, int *inst){
     Instruction[i].opCode = (inst[i] >> opCode_SHIFT) & opCode_MASK;
     if (Instruction[i].opCode == r_type){
         Instruction[i].rType = true;
@@ -28,6 +28,14 @@ void fetch(int i, uint32_t *inst){
         Instruction[i].rt = (inst[i] >> rt_SHIFT) & rt_MASK;
         Instruction[i].imm = inst[i] & imm_MASK;
         Instruction[i].address = inst[i] & add_MASK;
+    }
+
+    int s = Instruction[i].imm & 0x8000;
+
+    if(s == 0x8000) {
+        cout << Instruction[i].imm << " is now ";
+        Instruction[i].imm = (int16_t) Instruction[i].imm;
+        cout << Instruction[i].imm << '\n';
     }
 
 

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-uint32_t instMem[500];
+int instMem[500];
 int sp, fp, pc;
 int clk, CPI, *Ihit, Dhit;
 
@@ -13,12 +13,12 @@ int main() {
 
     int counter = readFile("../src/Program1File1.txt", instMem);
 
-    sp = instMem[0];
-    fp = instMem[1];
+    reg[29] = instMem[0];
+    reg[30] = instMem[1];
     pc = instMem[5];
 
     //shove instruction through a loop
-    for(int instI = 10; instI <= counter; instI++) {
+    for(int instI = pc; instI != 0; instI++) {
         //cout << instMem[instI] << '\n';
         fetch(instI, instMem);
         //cout << Instruction[instI].opCode << ' ' <<  Instruction[instI].rType << '\n';
