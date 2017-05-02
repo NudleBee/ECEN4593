@@ -10,14 +10,14 @@
 using namespace std;
 
 struct instFormat {
-    uint32_t opCode;
-    uint32_t rs;
-    uint32_t rt;
-    uint32_t rd;
-    uint32_t shamt;
-    uint32_t funct;
+    int opCode;
+    int rs;
+    int rt;
+    int rd;
+    int shamt;
+    int funct;
     int imm;
-    uint32_t address;
+    int address;
     bool rType;
 
 };

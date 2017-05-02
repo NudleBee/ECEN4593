@@ -23,6 +23,8 @@ fetch.h
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
 execute.cpp
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp
+writeBack.cpp
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
 
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.h
 
@@ -55,4 +57,10 @@ initalization.h
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
 iostream
 -
+
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
+writeBack.h
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h
+
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h
 

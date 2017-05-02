@@ -33,9 +33,9 @@ void fetch(int i, int *inst){
     int s = Instruction[i].imm & 0x8000;
 
     if(s == 0x8000) {
-        cout << Instruction[i].imm << " is now ";
+        //cout << Instruction[i].imm << " is now ";
         Instruction[i].imm = (int16_t) Instruction[i].imm;
-        cout << Instruction[i].imm << '\n';
+        //cout << Instruction[i].imm << '\n';
     }
 
 

@@ -67,7 +67,7 @@ int ADDI(int rs, int imm){
 }
 
 int ADDUI(int rs, int imm){
-    cout << rs << "+" << imm << '\n';
+    //cout << rs << "+" << imm << '\n';
     return rs + imm;
 }
 
@@ -83,87 +83,35 @@ bool BEQ(int rs, int rt){
     if (rs == rt){
         return true;
     }
-    else false;
-
+    return false;
 }
 
 bool BNE(int rs, int rt){
     if (rs != rt){
         return true;
     }
-    else false;
+    return false;
 }
 
 bool BGTZ(int rs){
     if (rs > 0){
         return true;
     }
-    else false;
+    return false;
 }
 
 bool BLTZ(int rs){
     if (rs < 0){
         return true;
     }
-    else false;
+    return false;
 }
 
 bool BLEZ(int rs){
     if (rs <= 0){
         return true;
     }
-    else false;
-}
-
-int LB(int rt, int rs, int imm){
-    int index = (imm + reg[rs]) / 4;
-    int pos = (imm + reg[rs]) % 4;
-    switch(pos) {
-        case 0:
-            reg[rt] = (reg[rt] & byte0) & ((mainMemory[index] & byte0));
-            break;
-        case 1:
-            reg[rt] = (reg[rt] & byte1) & ((mainMemory[index] & byte0) << shift8);
-            break;
-        case 2:
-            reg[rt] = (reg[rt] & byte2) & ((mainMemory[index] & byte0) << shift16);
-            break;
-        case 3:
-            reg[rt] = (reg[rt] & byte3) & ((mainMemory[index] & byte0) << shift24);
-            break;
-    }
-}
-
-int LBU(int rt, int rs, int imm){
-    int index = (imm + reg[rs]) / 4;
-    int pos = (imm + reg[rs]) % 4;
-    switch(pos) {
-        case 0:
-            reg[rt] = (reg[rt] & byte0) & ((mainMemory[index] & byte0));
-            break;
-        case 1:
-            reg[rt] = (reg[rt] & byte1) & ((mainMemory[index] & byte0) << shift8);
-            break;
-        case 2:
-            reg[rt] = (reg[rt] & byte2) & ((mainMemory[index] & byte0) << shift16);
-            break;
-        case 3:
-            reg[rt] = (reg[rt] & byte3) & ((mainMemory[index] & byte0) << shift24);
-            break;
-    }
-}
-
-int LHU(int rt, int rs, int imm){
-    int index = (imm + reg[rs]) / 4;
-    int pos = (imm + reg[rs]) % 2;
-    switch(pos) {
-        case 0:
-            reg[rt] = (reg[rt] & hwrd0) & ((mainMemory[index] & hwrd0));
-            break;
-        case 1:
-            reg[rt] = (reg[rt] & hwrd1) & ((mainMemory[index] & byte0) << shift16);
-            break;
-    }
+    return false;
 }
 
 int ORI(int rs, int imm){
@@ -184,7 +132,7 @@ int SLTIU(int rs, int imm){
     return 0;
 }
 
-int SB(int rt, int rs, int imm){
+void SB(int rt, int rs, int imm){
     int index = (imm + reg[rs]) / 4;
     int pos = (imm + reg[rs]) % 4;
     switch(pos){
@@ -201,10 +149,10 @@ int SB(int rt, int rs, int imm){
             mainMemory[index] = (mainMemory[index] & byte3) & ((reg[rt] & byte0) << shift24);
             break;
     }
-
+    return;
 }
 
-int SH(int rt, int rs, int imm){
+void SH(int rt, int rs, int imm){
     int index = (imm + rs) / 4;
     int pos = (imm + rs) % 2;
     switch(pos) {
@@ -215,6 +163,61 @@ int SH(int rt, int rs, int imm){
             mainMemory[index] = (mainMemory[index] & hwrd1) & ((reg[rt] & hwrd1) << shift16);
             break;
     }
+    return;
+}
+
+void LB(int rt, int rs, int imm){
+    int index = (imm + reg[rs]) / 4;
+    int pos = (imm + reg[rs]) % 4;
+    switch(pos) {
+        case 0:
+            reg[rt] = (reg[rt] & byte0) & ((mainMemory[index] & byte0));
+            break;
+        case 1:
+            reg[rt] = (reg[rt] & byte1) & ((mainMemory[index] & byte0) << shift8);
+            break;
+        case 2:
+            reg[rt] = (reg[rt] & byte2) & ((mainMemory[index] & byte0) << shift16);
+            break;
+        case 3:
+            reg[rt] = (reg[rt] & byte3) & ((mainMemory[index] & byte0) << shift24);
+            break;
+    }
+    return;
+}
+
+void LBU(int rt, int rs, int imm){
+    int index = (imm + reg[rs]) / 4;
+    int pos = (imm + reg[rs]) % 4;
+    switch(pos) {
+        case 0:
+            reg[rt] = (reg[rt] & byte0) & ((mainMemory[index] & byte0));
+            break;
+        case 1:
+            reg[rt] = (reg[rt] & byte1) & ((mainMemory[index] & byte0) << shift8);
+            break;
+        case 2:
+            reg[rt] = (reg[rt] & byte2) & ((mainMemory[index] & byte0) << shift16);
+            break;
+        case 3:
+            reg[rt] = (reg[rt] & byte3) & ((mainMemory[index] & byte0) << shift24);
+            break;
+    }
+    return;
+}
+
+void LHU(int rt, int rs, int imm){
+    int index = (imm + reg[rs]) / 4;
+    int pos = (imm + reg[rs]) % 2;
+    switch(pos) {
+        case 0:
+            reg[rt] = (reg[rt] & hwrd0) & ((mainMemory[index] & hwrd0));
+            break;
+        case 1:
+            reg[rt] = (reg[rt] & hwrd1) & ((mainMemory[index] & byte0) << shift16);
+            break;
+    }
+    return;
 }
 
 int signExtension(int i) {
@@ -224,4 +227,12 @@ int signExtension(int i) {
         value += 0xFFFF0000;
     }
     return value;
+}
+
+void printMem(){
+    cout << "========Main Memory==========" << '\n';
+    for(int k = 0; k <= 1200; k++){
+        cout << "mainMemory[" << k << "] " << mainMemory[k] << '\n';
+    }
+    return;
 }

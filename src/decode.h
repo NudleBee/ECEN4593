@@ -24,7 +24,7 @@
 #define lbu 0x24 //sign extended
 #define lhu 0x25 //sign extended
 #define lui 0xf // load lower halfword imm to upper halfword register
-#define lw 0x31 //sign extended
+#define lw 0x23 //sign extended
 #define sb 0x28 //sign extended
 #define sh 0x29 //sign extended
 #define sw 0x2b //sign extended
@@ -63,7 +63,7 @@
 #define shift24 24
 #define shift28 28
 
-int decode(instFormat instr, int programCounter);
+int decode(instFormat instr, int programCounter, int *mainMemory);
 
 
 #endif //ECEN4593_DECODE_H

@@ -10,4 +10,6 @@ CMakeFiles/ECEN4593.dir/main.cpp.o: ../src/fetch.cpp
 CMakeFiles/ECEN4593.dir/main.cpp.o: ../src/fetch.h
 CMakeFiles/ECEN4593.dir/main.cpp.o: ../src/initalization.cpp
 CMakeFiles/ECEN4593.dir/main.cpp.o: ../src/initalization.h
+CMakeFiles/ECEN4593.dir/main.cpp.o: ../src/writeBack.cpp
+CMakeFiles/ECEN4593.dir/main.cpp.o: ../src/writeBack.h
 

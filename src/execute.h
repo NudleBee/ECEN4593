@@ -24,11 +24,11 @@ bool BLTZ(int rs);
 
 bool BLEZ(int rs);
 
-int LB(int rt, int rs, int imm);
+void LB(int rt, int rs, int imm);
 
-int LBU(int rt, int rs, int imm);
+void LBU(int rt, int rs, int imm);
 
-int LHU(int rt, int rs, int imm);
+void LHU(int rt, int rs, int imm);
 
 int ORI(int rs, int imm);
 
@@ -36,9 +36,9 @@ int SLTI(int rs, int imm);
 
 int SLTIU(int rs, int imm);
 
-int SB(int rt, int rs, int imm);
+void SB(int rt, int rs, int imm);
 
-int SH(int rt, int rs, int imm);
+void SH(int rt, int rs, int imm);
 
 //r types
 int ADD(int rs, int rt);
@@ -66,5 +66,7 @@ int SUBU(int rs, int rt);
 int XOR_F(int rs, int rt);
 
 int signExtension(int i);
+
+void printMem();
 
 #endif //ECEN4593_EXECUTE_H
