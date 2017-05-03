@@ -3,152 +3,112 @@
 //
 
 #include "decode.h"
-#include "fetch.h"
-#include "execute.cpp"
-#include "writeBack.cpp"
+#include "initalization.h"
 
 using namespace std;
 
 //Branch Detection (update pc)
 
-int decode(instFormat instr, int programCounter, int *mainMemory){
-    switch(instr.opCode) {
-        case 0x00:
-            switch (instr.funct){
-                case add: cout << "add" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    reg[instr.rd] = ADD(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case addu: cout << "addu" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt << '\n';
-                    reg[instr.rd] = ADDU(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case and_f: cout << "and_f" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    reg[instr.rd] = AND_F(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case nor: cout << "nor" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    reg[instr.rd] = NOR(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case or_f: cout << "or_f" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    reg[instr.rd] = OR_F(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case movn: cout << "movn" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    if(reg[instr.rt] != 0){
-                        reg[instr.rd] = reg[instr.rs];
-                    }
-                    break;
-                case movz: cout << "movz" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    if(reg[instr.rt] == 0){
-                        reg[instr.rd] = reg[instr.rs];
-                    }
-                    break;
-                case slt: cout << "slt" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    reg[instr.rd] = SLT(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case sltu: cout << "sltu" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    reg[instr.rd] = SLTU(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case sll: cout << "sll" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.shamt <<  '\n';
-                    reg[instr.rd] = SLL(reg[instr.rt], instr.shamt);
-                    break;
-                case srl: cout << "srl" <<", " << instr.rd << ", " <<  instr.rs << ", " << instr.shamt <<  '\n';
-                    reg[instr.rd] = SRL(reg[instr.rt], instr.shamt);
-                    break;
-                case sub: cout << "sub" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    reg[instr.rd] = SUB(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case subu: cout << "subu" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    reg[instr.rd] = SUBU(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case xor_f: cout << "xor_f" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
-                    reg[instr.rd] = XOR_F(reg[instr.rs], reg[instr.rt]);
-                    break;
-                case jr: cout << "jr";
-                    cout << " " << reg[instr.rs] << '\n';
-                    return reg[instr.rs] - 1;
+bool BEQ(int rs, int rt){
+    if (rs == rt){
+        return true;
+    }
+    return false;
+}
 
+bool BNE(int rs, int rt){
+    if (rs != rt){
+        return true;
+    }
+    return false;
+}
+
+bool BGTZ(int rs){
+    if (rs > 0){
+        return true;
+    }
+    return false;
+}
+
+bool BLTZ(int rs){
+    if (rs < 0){
+        return true;
+    }
+    return false;
+}
+
+bool BLEZ(int rs){
+    if (rs <= 0){
+        return true;
+    }
+    return false;
+}
+
+int decode(int instr, int programCounter){
+    ID_EX[4].opCode = (instr >> opCode_SHIFT) & opCode_MASK;
+    if (ID_EX[4].opCode == r_type){
+        ID_EX[4].rs = (instr >> rs_SHIFT) & rs_MASK;
+        ID_EX[4].rt = (instr >> rt_SHIFT) & rt_MASK;
+        ID_EX[4].rd = (instr >> rd_SHIFT) & rd_MASK;
+        ID_EX[4].shamt = (instr >> shamt_SHIFT) & shamt_MASK;
+        ID_EX[4].funct = instr & funct_MASK;
+        ID_EX[4].imm = 0;
+        ID_EX[4].address = 0;
+    }
+    else {
+        ID_EX[4].rs = (instr >> rs_SHIFT) & rs_MASK;
+        ID_EX[4].rt = (instr >> rt_SHIFT) & rt_MASK;
+        ID_EX[4].imm = instr & imm_MASK;
+        ID_EX[4].address = instr & add_MASK;
+    }
+
+    int s = ID_EX[4].imm & 0x8000;
+
+    if(s == 0x8000) {
+        //cout << Instruction[i].imm << " is now ";
+        ID_EX[4].imm = (int16_t) ID_EX[4].imm;
+        //cout << Instruction[i].imm << '\n';
+    }
+    //Branches and jumps
+    switch(ID_EX[4].opCode){
+        case beq: cout << "beq" << ", " << ID_EX[4].rt << ", " <<  ID_EX[4].rs << ", " << ID_EX[4].imm <<  '\n';
+            if(BEQ(reg[ID_EX[4].rs], reg[ID_EX[4].rt])){
+                return programCounter + ID_EX[4].imm;
             }
             break;
-        case addi: cout << "addi" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            reg[instr.rt] = ADDI(reg[instr.rs], instr.imm);
-            break;
-        case addui: cout << "addui" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            reg[instr.rt] = ADDUI(reg[instr.rs], instr.imm);
-            break;
-        case andi: cout << "andi" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            reg[instr.rt] = ANDI(reg[instr.rs], instr.imm);
-            break;
-        case xori: cout << "xori" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            reg[instr.rt] = XORI(reg[instr.rs], instr.imm);
-            break;
-        case beq: cout << "beq" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            if(BEQ(reg[instr.rs], reg[instr.rt])){
-                return programCounter + instr.imm;
+        case bne: cout << "bne" << ", " << ID_EX[4].rt << ", " <<  ID_EX[4].rs << ", " << ID_EX[4].imm <<  '\n';
+            if(BNE(reg[ID_EX[4].rs], reg[ID_EX[4].rt])){
+                return programCounter + ID_EX[4].imm;
             }
             break;
-        case bne: cout << "bne" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            if(BNE(reg[instr.rs], reg[instr.rt])){
-                return programCounter + instr.imm;
+        case bgtz: cout << "bgtz" << ", " << ID_EX[4].rt << ", " <<  ID_EX[4].rs << ", " << ID_EX[4].imm <<  '\n';
+            if(BGTZ(reg[ID_EX[4].rs])){
+                return programCounter + ID_EX[4].imm;
             }
             break;
-        case bgtz: cout << "bgtz" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            if(BGTZ(reg[instr.rs])){
-                return programCounter + instr.imm;
+        case bltz: cout << "bltz" << ", " << ID_EX[4].rt << ", " <<  ID_EX[4].rs << ", " << ID_EX[4].imm <<  '\n';
+            if(BLTZ(reg[ID_EX[4].rs])){
+                return programCounter + ID_EX[4].imm;
             }
             break;
-        case bltz: cout << "bltz" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            if(BLTZ(reg[instr.rs])){
-                return programCounter + instr.imm;
-            }
-            break;
-        case blez: cout << "blez" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            if(BLEZ(reg[instr.rs])){
-                return programCounter + instr.imm;
+        case blez: cout << "blez" << ", " << ID_EX[4].rt << ", " <<  ID_EX[4].rs << ", " << ID_EX[4].imm <<  '\n';
+            if(BLEZ(reg[ID_EX[4].rs])){
+                return programCounter + ID_EX[4].imm;
             }
             break;
         case j: cout << "j" << '\n';
-            return instr.address - 1;
-        case jal: cout << "jal " << instr.address << '\n';
+            return ID_EX[4].address - 1;
+        case jal: cout << "jal " << ID_EX[4].address << '\n';
             reg[31] = programCounter + 2;
-            return instr.address - 1;
-        case lb: cout << "lb" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
-            LB(instr.rt, instr.rs, instr.imm);
-            break;
-        case lbu: cout << "lbu" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
-            LBU(instr.rt, instr.rs, instr.imm);
-            break;
-        case lhu: cout << "lhu" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
-            LHU(instr.rt, instr.rs, instr.imm);
-            break;
-        case lui: cout << "lui" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            reg[instr.rt] = signExtension(instr.imm | 0xFFFF);
-            break;
-        case lw: cout << "lw" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
-            reg[instr.rt] = mainMemory[(reg[instr.rs] + instr.imm) / 4];
-            //printMem();
-            break;
-        case ori: cout << "ori" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            reg[instr.rt] = ORI(instr.rs, instr.imm);
-            break;
-        case slti: cout << "stli" <<  ", " << instr.rd << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            reg[instr.rt] = SLTI(reg[instr.rs], instr.imm);
-            break;
-        case sltiu: cout << "sltiu" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
-            reg[instr.rt] =  SLTIU(reg[instr.rs], instr.imm);
-            break;
-        case sb: cout << "sb" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
-            SB(instr.rt, instr.rs, instr.imm);
-            break;
-        case sh: cout << "sh" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
-            SH(instr.rt, instr.rs, instr.imm);
-            break;
-        case sw: cout << "sw" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
-            mainMemory[(reg[instr.rs] + instr.imm) / 4] = reg[instr.rt];
-            //printMem();
-            break;
-        case seb: cout << "seb" << '\n';
-            reg[instr.rd] = signExtension(reg[instr.rt]);
-            break;
+            return ID_EX[4].address - 1;
+        case 0x00:
+            switch(ID_EX[4].funct) {
+                case jr:
+                    cout << "jr";
+                    cout << " " << reg[ID_EX[4].rs] << '\n';
+                    return reg[ID_EX[4].rs] - 1;
+            }
     }
-
 
     return programCounter;
 }

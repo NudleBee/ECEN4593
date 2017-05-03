@@ -15,16 +15,24 @@ src/fetch.cpp
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp
 src/decode.cpp
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.cpp
+src/execute.cpp
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp
+src/accessMem.cpp
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp
+src/writeBack.cpp
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
+
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp
+accessMem.h
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.h
+
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.h
 
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.cpp
 decode.h
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.h
-fetch.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
-execute.cpp
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp
-writeBack.cpp
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
+initalization.h
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
 
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.h
 
@@ -37,10 +45,8 @@ execute.h
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp
 fetch.h
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
-iostream
--
-fstream
--
+initalization.h
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
 
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
 iostream
@@ -61,6 +67,8 @@ iostream
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
 writeBack.h
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h
+initalization.h
+/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
 
 /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h
 

@@ -5,68 +5,43 @@
 #ifndef ECEN4593_EXECUTE_H
 #define ECEN4593_EXECUTE_H
 
-//i types
-int ADDI(int rs, int imm);
+// i or j types
+#define andi 0xc //0 extended (no change)
+#define addi 0x8 //sign extended
+#define addui 0x9 //sign extended
+#define ori 0xd //0 extended
+#define xori 0xe //sign extended
+#define slti 0xa //sign extended
+#define sltiu 0xb //sign extended
 
-int ADDUI(int rs, int imm);
 
-int ANDI(int rs, int imm);
+#define seb 0x1F //
 
-int XORI(int rs, int imm);
+// r types
+#define add 0x20
+#define addu 0x21
+#define and_f 0x24
+#define nor 0x27
+#define or_f 0x25
+#define movn 0xb
+#define movz 0xa
+#define slt 0x2a
+#define sltu 0x2b
+#define sll 0x00
+#define srl 0x2
+#define sub 0x22
+#define subu 0x23
+#define xor_f 0x26
 
-bool BEQ(int rs, int rt);
+#define lb 0x20
+#define lbu 0x24 //sign extended
+#define lhu 0x25 //sign extended
+#define lui 0xf // load lower halfword imm to upper halfword register
+#define lw 0x23 //sign extended
+#define sb 0x28 //sign extended
+#define sh 0x29 //sign extended
+#define sw 0x2b //sign extended
 
-bool BNE(int rs, int rt);
-
-bool BGTZ(int rs);
-
-bool BLTZ(int rs);
-
-bool BLEZ(int rs);
-
-void LB(int rt, int rs, int imm);
-
-void LBU(int rt, int rs, int imm);
-
-void LHU(int rt, int rs, int imm);
-
-int ORI(int rs, int imm);
-
-int SLTI(int rs, int imm);
-
-int SLTIU(int rs, int imm);
-
-void SB(int rt, int rs, int imm);
-
-void SH(int rt, int rs, int imm);
-
-//r types
-int ADD(int rs, int rt);
-
-int ADDU(int rs, int rt);
-
-int AND_F(int rs, int rt);
-
-int NOR(int rs, int rt);
-
-int OR_F(int rs, int rt);
-
-int SLT(int rs, int rt);
-
-int SLTU(int rs, int rt);
-
-int SLL(int rt, int shamt);
-
-int SRL(int rt, int shamt);
-
-int SUB(int rs, int rt);
-
-int SUBU(int rs, int rt);
-
-int XOR_F(int rs, int rt);
-
-int signExtension(int i);
-
-void printMem();
+void execute(instrFormat instr);
 
 #endif //ECEN4593_EXECUTE_H

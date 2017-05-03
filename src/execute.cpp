@@ -4,9 +4,6 @@
 
 #include "execute.h"
 
-int reg[32] = {0};
-int mainMemory[1200] = {0};
-
 int ADD(int rs, int rt){
     return rs + rs;
 }
@@ -67,7 +64,6 @@ int ADDI(int rs, int imm){
 }
 
 int ADDUI(int rs, int imm){
-    //cout << rs << "+" << imm << '\n';
     return rs + imm;
 }
 
@@ -79,40 +75,7 @@ int XORI(int rs, int imm){
     return rs^imm;
 }
 
-bool BEQ(int rs, int rt){
-    if (rs == rt){
-        return true;
-    }
-    return false;
-}
 
-bool BNE(int rs, int rt){
-    if (rs != rt){
-        return true;
-    }
-    return false;
-}
-
-bool BGTZ(int rs){
-    if (rs > 0){
-        return true;
-    }
-    return false;
-}
-
-bool BLTZ(int rs){
-    if (rs < 0){
-        return true;
-    }
-    return false;
-}
-
-bool BLEZ(int rs){
-    if (rs <= 0){
-        return true;
-    }
-    return false;
-}
 
 int ORI(int rs, int imm){
     return rs | imm;
@@ -132,94 +95,6 @@ int SLTIU(int rs, int imm){
     return 0;
 }
 
-void SB(int rt, int rs, int imm){
-    int index = (imm + reg[rs]) / 4;
-    int pos = (imm + reg[rs]) % 4;
-    switch(pos){
-        case 0:
-            mainMemory[index] = (mainMemory[index] & byte0) & (reg[rt] & byte0);
-            break;
-        case 1:
-            mainMemory[index] = (mainMemory[index] & byte1) & ((reg[rt] & byte0) << shift8);
-            break;
-        case 2:
-            mainMemory[index] = (mainMemory[index] & byte2) & ((reg[rt] & byte0) << shift16);
-            break;
-        case 3:
-            mainMemory[index] = (mainMemory[index] & byte3) & ((reg[rt] & byte0) << shift24);
-            break;
-    }
-    return;
-}
-
-void SH(int rt, int rs, int imm){
-    int index = (imm + rs) / 4;
-    int pos = (imm + rs) % 2;
-    switch(pos) {
-        case 0:
-            mainMemory[index] = (mainMemory[index] & hwrd0) & (reg[rt] & hwrd0);
-            break;
-        case 1:
-            mainMemory[index] = (mainMemory[index] & hwrd1) & ((reg[rt] & hwrd1) << shift16);
-            break;
-    }
-    return;
-}
-
-void LB(int rt, int rs, int imm){
-    int index = (imm + reg[rs]) / 4;
-    int pos = (imm + reg[rs]) % 4;
-    switch(pos) {
-        case 0:
-            reg[rt] = (reg[rt] & byte0) & ((mainMemory[index] & byte0));
-            break;
-        case 1:
-            reg[rt] = (reg[rt] & byte1) & ((mainMemory[index] & byte0) << shift8);
-            break;
-        case 2:
-            reg[rt] = (reg[rt] & byte2) & ((mainMemory[index] & byte0) << shift16);
-            break;
-        case 3:
-            reg[rt] = (reg[rt] & byte3) & ((mainMemory[index] & byte0) << shift24);
-            break;
-    }
-    return;
-}
-
-void LBU(int rt, int rs, int imm){
-    int index = (imm + reg[rs]) / 4;
-    int pos = (imm + reg[rs]) % 4;
-    switch(pos) {
-        case 0:
-            reg[rt] = (reg[rt] & byte0) & ((mainMemory[index] & byte0));
-            break;
-        case 1:
-            reg[rt] = (reg[rt] & byte1) & ((mainMemory[index] & byte0) << shift8);
-            break;
-        case 2:
-            reg[rt] = (reg[rt] & byte2) & ((mainMemory[index] & byte0) << shift16);
-            break;
-        case 3:
-            reg[rt] = (reg[rt] & byte3) & ((mainMemory[index] & byte0) << shift24);
-            break;
-    }
-    return;
-}
-
-void LHU(int rt, int rs, int imm){
-    int index = (imm + reg[rs]) / 4;
-    int pos = (imm + reg[rs]) % 2;
-    switch(pos) {
-        case 0:
-            reg[rt] = (reg[rt] & hwrd0) & ((mainMemory[index] & hwrd0));
-            break;
-        case 1:
-            reg[rt] = (reg[rt] & hwrd1) & ((mainMemory[index] & byte0) << shift16);
-            break;
-    }
-    return;
-}
-
 int signExtension(int i) {
     int value = (0x0000FFFF & i);
     int mask = 0x00008000;
@@ -234,5 +109,114 @@ void printMem(){
     for(int k = 0; k <= 1200; k++){
         cout << "mainMemory[" << k << "] " << mainMemory[k] << '\n';
     }
+    return;
+}
+
+void execute(instrFormat instr){
+    EX_MEM[4] = ID_EX[3];
+    switch(instr.opCode) {
+        case 0x00:
+            switch (instr.funct){
+                case add: cout << "add" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = ADD(reg[instr.rs], reg[instr.rt]);
+                    break;
+                case addu: cout << "addu" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt << '\n';
+                    EX_MEM[4].exOutput = ADDU(reg[instr.rs], reg[instr.rt]);
+                    break;
+                case and_f: cout << "and_f" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = AND_F(reg[instr.rs], reg[instr.rt]);
+                    break;
+                case nor: cout << "nor" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = NOR(reg[instr.rs], reg[instr.rt]);
+                    break;
+                case or_f: cout << "or_f" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = OR_F(reg[instr.rs], reg[instr.rt]);
+                    break;
+                case movn: cout << "movn" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = reg[instr.rs];
+                    break;
+                case movz: cout << "movz" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = reg[instr.rs];
+                    break;
+                case slt: cout << "slt" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = SLT(reg[instr.rs], reg[instr.rt]);
+                    break;
+                case sltu: cout << "sltu" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = SLTU(reg[instr.rs], reg[instr.rt]);
+                    break;
+                case sll: cout << "sll" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.shamt <<  '\n';
+                    EX_MEM[4].exOutput = SLL(reg[instr.rt], instr.shamt);
+                    break;
+                case srl: cout << "srl" <<", " << instr.rd << ", " <<  instr.rs << ", " << instr.shamt <<  '\n';
+                    EX_MEM[4].exOutput = SRL(reg[instr.rt], instr.shamt);
+                    break;
+                case sub: cout << "sub" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = SUB(reg[instr.rs], reg[instr.rt]);
+                    break;
+                case subu: cout << "subu" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = SUBU(reg[instr.rs], reg[instr.rt]);
+                    break;
+                case xor_f: cout << "xor_f" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.rt <<  '\n';
+                    EX_MEM[4].exOutput = XOR_F(reg[instr.rs], reg[instr.rt]);
+                    break;
+
+            }
+            break;
+        case addi: cout << "addi" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
+            EX_MEM[4].exOutput = ADDI(reg[instr.rs], instr.imm);
+            break;
+        case addui: cout << "addui" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
+            EX_MEM[4].exOutput = ADDUI(reg[instr.rs], instr.imm);
+            break;
+        case andi: cout << "andi" << ", " << instr.rd << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
+            EX_MEM[4].exOutput = ANDI(reg[instr.rs], instr.imm);
+            break;
+        case xori: cout << "xori" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
+            EX_MEM[4].exOutput = XORI(reg[instr.rs], instr.imm);
+            break;
+        case ori: cout << "ori" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
+            EX_MEM[4].exOutput = ORI(instr.rs, instr.imm);
+            break;
+        case slti: cout << "stli" <<  ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
+            EX_MEM[4].exOutput = SLTI(reg[instr.rs], instr.imm);
+            break;
+        case sltiu: cout << "sltiu" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
+            EX_MEM[4].exOutput =  SLTIU(reg[instr.rs], instr.imm);
+            break;
+        case sb: cout << "sb" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
+            EX_MEM[4].exOutput = (reg[instr.rs] + instr.imm) / 4;
+            EX_MEM[4].pos = (instr.imm + reg[instr.rs]) % 4;
+            break;
+        case sh: cout << "sh" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
+            EX_MEM[4].exOutput = (reg[instr.rs] + instr.imm) / 4;
+            EX_MEM[4].pos = (instr.imm + reg[instr.rs]) % 2;
+            break;
+        case sw: cout << "sw" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
+            EX_MEM[4].exOutput = (reg[instr.rs] + instr.imm) / 4;
+            break;
+        case lb: cout << "lb" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
+            EX_MEM[4].exOutput = (reg[instr.rs] + instr.imm) / 4;
+            EX_MEM[4].pos = (instr.imm + reg[instr.rs]) % 4;
+            break;
+        case lbu: cout << "lbu" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
+            EX_MEM[4].exOutput = (reg[instr.rs] + instr.imm) / 4;
+            EX_MEM[4].pos = (instr.imm + reg[instr.rs]) % 4;
+            break;
+        case lhu: cout << "lhu" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
+            EX_MEM[4].exOutput = (reg[instr.rs] + instr.imm) / 4;
+            EX_MEM[4].pos = (instr.imm + reg[instr.rs]) % 2;
+            break;
+        case lw: cout << "lw" << ", " << instr.rt << ", " <<  instr.imm << "(" << instr.rs <<  ")" << '\n';
+            EX_MEM[4].exOutput = (reg[instr.rs] + instr.imm) / 4;
+            break;
+        case lui: cout << "lui" << ", " << instr.rt << ", " <<  instr.rs << ", " << instr.imm <<  '\n';
+            EX_MEM[4].exOutput = signExtension(instr.imm | 0xFFFF);
+            break;
+        case seb: cout << "seb" << '\n';
+            EX_MEM[4].exOutput = signExtension(reg[instr.rt]);
+            break;
+    }
+
+
     return;
 }

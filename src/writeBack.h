@@ -5,6 +5,6 @@
 #ifndef ECEN4593_WRITEBACK_H
 #define ECEN4593_WRITEBACK_H
 
-
+void writeBack(instrFormat instr);
 
 #endif //ECEN4593_WRITEBACK_H
