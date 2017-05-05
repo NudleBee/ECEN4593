@@ -66,29 +66,37 @@ int LHU(int address, int pos, int rt){
     return 0;
 }
 
-void accessMem(instrFormat instr, int i) {
-    MEM_WB[4] = EX_MEM[3];
+void accessMem(instrFormat instr) {
     switch(instr.opCode) {
         case lb:
-            MEM_WB[i].memOutput = LB(instr.exOutput, instr.pos, instr.rt);
+            MEM_WB[1].memOutput = LB(instr.exOutput, instr.pos, instr.rt);
             break;
         case lbu:
-            MEM_WB[i].memOutput = LBU(instr.exOutput, instr.pos, instr.rt);
+            MEM_WB[1].memOutput = LBU(instr.exOutput, instr.pos, instr.rt);
             break;
         case lhu:
-            MEM_WB[i].memOutput = LHU(instr.exOutput, instr.pos, instr.rt);
+            MEM_WB[1].memOutput = LHU(instr.exOutput, instr.pos, instr.rt);
             break;
         case lw:
-            MEM_WB[i].memOutput = instr.exOutput;
+            MEM_WB[1].memOutput = mainMemory[instr.exOutput];
             break;
         case sb:
-            MEM_WB[i].memOutput = SB(instr.exOutput, instr.pos, instr.rt);
+            MEM_WB[1].memOutput = SB(instr.exOutput, instr.pos, instr.rt);
             break;
         case sh:
-            MEM_WB[i].memOutput = SH(instr.exOutput, instr.pos, instr.rt);
+            MEM_WB[1].memOutput = SH(instr.exOutput, instr.pos, instr.rt);
             break;
         case sw:
-            MEM_WB[i].memOutput = instr.exOutput;
+            //cout << instr.exOutput << " " <<
+            MEM_WB[1].memOutput = mainMemory[instr.exOutput];
             break;
+    }
+
+    //Memory to Memory copies
+    if((MEM_WB[1].opCode == lw) && (EX_MEM[1].opCode == sw)) {
+        if (EX_MEM[1].rt == MEM_WB[1].rt) {
+            cout << "MEM to MEM copy" << '\n';
+            MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+        }
     }
 }

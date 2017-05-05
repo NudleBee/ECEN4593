@@ -9,6 +9,6 @@
 using namespace std;
 
 void fetch(int inst){
-    IF_ID[4] =  inst;
+    IF_ID[1] = inst;
     return;
 }

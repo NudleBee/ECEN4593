@@ -33,6 +33,6 @@
 #define shift24 24
 #define shift28 28
 
-void accessMem(instrFormat instr, int i);
+void accessMem(instrFormat instr);
 
 #endif //ECEN4593_ACCESSMEM_H

@@ -29,6 +29,14 @@
 #define j 0x2
 #define jal 0x3
 
+#define lb 0x20
+#define lbu 0x24 //sign extended
+#define lhu 0x25 //sign extended
+#define lw 0x23 //sign extended
+#define sb 0x28 //sign extended
+#define sh 0x29 //sign extended
+#define sw 0x2b //sign extended
+
 int decode(int instr, int programCounter);
 
 

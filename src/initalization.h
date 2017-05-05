@@ -9,17 +9,17 @@ using namespace std;
 #define ECEN4593_INITALIZATION_H
 
 struct instrFormat {
-    int opCode;
-    int rs;
-    int rt;
-    int rd;
-    int shamt;
-    int funct;
-    int imm;
-    int address;
-    int exOutput;
-    int pos;
-    int memOutput;
+    int opCode = 0;
+    int rs = 0;
+    int rt = 0;
+    int rd = 0;
+    int shamt = 0;
+    int funct = 0;
+    int imm = 0;
+    int address = 0;
+    int exOutput = 0;
+    int pos = 0;
+    int memOutput = 0;
 };
 
 int instrMem[500];
@@ -27,11 +27,13 @@ int mainMemory[1200] = {0};
 int reg[32];
 int sp, fp, pc;
 int clk, CPI, *Ihit, Dhit;
+bool stall = false;
 
-int IF_ID[5];
-instrFormat ID_EX[5];
-instrFormat EX_MEM[5];
-instrFormat MEM_WB[5];
+
+int IF_ID[4] = {0};
+instrFormat ID_EX[4];
+instrFormat EX_MEM[4];
+instrFormat MEM_WB[4];
 
 int readFile(string fileName);
 

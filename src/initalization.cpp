@@ -28,7 +28,14 @@ int readFile(string fileName){
 }
 
 void shadowShift(){
+    MEM_WB[2] = EX_MEM[1];
+    EX_MEM[2] = ID_EX[1];
 
-
+    for (int i = 0; i < 3; i++) {
+        IF_ID[i] = IF_ID[i + 1];
+        ID_EX[i] = ID_EX[i + 1];
+        EX_MEM[i] = EX_MEM[i + 1];
+        MEM_WB[i] = MEM_WB[i + 1];
+    }
     return;
 }
