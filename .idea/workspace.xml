@@ -13,16 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="70bc74cc-3ea3-4d50-80ce-db7f4345ef29" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/accessMem.cpp" afterPath="$PROJECT_DIR$/src/accessMem.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/accessMem.h" afterPath="$PROJECT_DIR$/src/accessMem.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decode.cpp" afterPath="$PROJECT_DIR$/src/decode.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decode.h" afterPath="$PROJECT_DIR$/src/decode.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/execute.cpp" afterPath="$PROJECT_DIR$/src/execute.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fetch.cpp" afterPath="$PROJECT_DIR$/src/fetch.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/initalization.cpp" afterPath="$PROJECT_DIR$/src/initalization.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/initalization.h" afterPath="$PROJECT_DIR$/src/initalization.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writeBack.cpp" afterPath="$PROJECT_DIR$/src/writeBack.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writeBack.h" afterPath="$PROJECT_DIR$/src/writeBack.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +34,7 @@
           <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="263">
+                <state relative-caret-position="553">
                   <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#19#0" expanded="true" />
@@ -52,7 +46,7 @@
           <file leaf-file-name="initalization.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/initalization.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="211">
+                <state relative-caret-position="246">
                   <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
                   <folding>
                     <element signature="e#49#67#0" expanded="true" />
@@ -76,8 +70,8 @@
           <file leaf-file-name="decode.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/decode.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2115">
-                  <caret line="142" column="52" lean-forward="false" selection-start-line="142" selection-start-column="52" selection-end-line="142" selection-end-column="52" />
+                <state relative-caret-position="241">
+                  <caret line="114" column="9" lean-forward="false" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -86,8 +80,8 @@
           <file leaf-file-name="execute.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/execute.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="651">
-                  <caret line="231" column="5" lean-forward="true" selection-start-line="231" selection-start-column="5" selection-end-line="231" selection-end-column="5" />
+                <state relative-caret-position="231">
+                  <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -96,8 +90,8 @@
           <file leaf-file-name="accessMem.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/accessMem.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="598">
-                  <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+                <state relative-caret-position="1431">
+                  <caret line="152" column="26" lean-forward="false" selection-start-line="152" selection-start-column="26" selection-end-line="152" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -106,7 +100,7 @@
           <file leaf-file-name="writeBack.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/writeBack.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="313">
+                <state relative-caret-position="861">
                   <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
                   <folding>
                     <element signature="e#49#71#0" expanded="true" />
@@ -139,11 +133,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="decode.h" pinned="false" current-in-tab="false">
+          <file leaf-file-name="decode.h" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/decode.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="508">
-                  <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+                <state relative-caret-position="223">
+                  <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -152,8 +146,8 @@
           <file leaf-file-name="execute.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/execute.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="314">
-                  <caret line="40" column="12" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="42" selection-end-column="31" />
+                <state relative-caret-position="165">
+                  <caret line="11" column="7" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="42" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -162,8 +156,8 @@
           <file leaf-file-name="accessMem.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/accessMem.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+                <state relative-caret-position="-5">
+                  <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
@@ -172,18 +166,18 @@
           <file leaf-file-name="writeBack.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/writeBack.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+                <state relative-caret-position="630">
+                  <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Program1File1.txt" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Program1File1.txt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Program1File1.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="10" />
+                <state relative-caret-position="2280">
+                  <caret line="152" column="7" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -206,19 +200,19 @@
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/Program1File1.txt" />
-        <option value="$PROJECT_DIR$/src/writeBack.h" />
         <option value="$PROJECT_DIR$/src/execute.h" />
-        <option value="$PROJECT_DIR$/src/accessMem.h" />
-        <option value="$PROJECT_DIR$/src/execute.cpp" />
         <option value="$PROJECT_DIR$/src/writeBack.cpp" />
         <option value="$PROJECT_DIR$/src/fetch.h" />
         <option value="$PROJECT_DIR$/src/fetch.cpp" />
         <option value="$PROJECT_DIR$/src/initalization.h" />
         <option value="$PROJECT_DIR$/src/initalization.cpp" />
         <option value="$PROJECT_DIR$/src/decode.h" />
+        <option value="$PROJECT_DIR$/src/execute.cpp" />
+        <option value="$PROJECT_DIR$/src/accessMem.h" />
         <option value="$PROJECT_DIR$/src/accessMem.cpp" />
-        <option value="$PROJECT_DIR$/src/decode.cpp" />
+        <option value="$PROJECT_DIR$/src/writeBack.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/src/decode.cpp" />
       </list>
     </option>
   </component>
@@ -589,14 +583,22 @@
       <option name="project" value="LOCAL" />
       <updated>1493613613991</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added stalls, EX/MEM forwarding, MEM/WB forwarding, and MEM to MEM copying.">
+      <created>1493974597589</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1493974597589</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113135000" />
+    <option name="totallyTimeSpent" value="115140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="23" width="1400" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24285714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -604,11 +606,11 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.57357144" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27198124" sideWeight="0.49444443" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.4264286" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32692307" sideWeight="0.4264286" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.49714285" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39835164" sideWeight="0.4722222" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39835164" sideWeight="0.4722222" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -667,7 +669,8 @@
     <MESSAGE value="Adding decode stage and writing execute functions. Also added global variable reg to keep track of the registers changed by the instructions." />
     <MESSAGE value="ALl execute functions written. Debugging jumps, load, and stores." />
     <MESSAGE value="Added check of the sign bit for immediates and conversion to the proper singed number." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added check of the sign bit for immediates and conversion to the proper singed number." />
+    <MESSAGE value="Added stalls, EX/MEM forwarding, MEM/WB forwarding, and MEM to MEM copying." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added stalls, EX/MEM forwarding, MEM/WB forwarding, and MEM to MEM copying." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -969,44 +972,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/writeBack.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/writeBack.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
-          <folding>
-            <element signature="e#49#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/execute.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="40" column="12" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="42" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fetch.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/execute.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="231" column="5" lean-forward="true" selection-start-line="231" selection-start-column="5" selection-end-line="231" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1019,27 +988,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/decode.h">
+    <entry file="file://$PROJECT_DIR$/src/Program2File1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+        <state relative-caret-position="-73">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/accessMem.h">
+    <entry file="file://$PROJECT_DIR$/src/execute.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        <state relative-caret-position="231">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/accessMem.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+        <state relative-caret-position="1431">
+          <caret line="152" column="26" lean-forward="false" selection-start-line="152" selection-start-column="26" selection-end-line="152" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/writeBack.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+          <folding>
+            <element signature="e#49#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/accessMem.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/execute.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="42" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/writeBack.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Program1File1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="152" column="7" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/initalization.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding>
+            <element signature="e#49#67#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1053,43 +1074,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Program2File1.txt">
+    <entry file="file://$PROJECT_DIR$/src/decode.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-73">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/initalization.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-          <folding>
-            <element signature="e#49#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Program1File1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="10" />
+        <state relative-caret-position="223">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/decode.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2115">
-          <caret line="142" column="52" lean-forward="false" selection-start-line="142" selection-start-column="52" selection-end-line="142" selection-end-column="52" />
+        <state relative-caret-position="241">
+          <caret line="114" column="9" lean-forward="false" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="553">
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />

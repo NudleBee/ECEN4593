@@ -21,7 +21,7 @@ int NOR(int rs, int rt){
 }
 
 int OR_F(int rs, int rt){
-    return rs | rt;
+    return rs|rt;
 
 }
 

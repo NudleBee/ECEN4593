@@ -67,7 +67,7 @@ int LHU(int address, int pos, int rt){
 }
 
 void accessMem(instrFormat instr) {
-    switch(instr.opCode) {
+    switch (instr.opCode) {
         case lb:
             MEM_WB[1].memOutput = LB(instr.exOutput, instr.pos, instr.rt);
             break;
@@ -87,16 +87,98 @@ void accessMem(instrFormat instr) {
             MEM_WB[1].memOutput = SH(instr.exOutput, instr.pos, instr.rt);
             break;
         case sw:
-            //cout << instr.exOutput << " " <<
             MEM_WB[1].memOutput = mainMemory[instr.exOutput];
             break;
     }
 
     //Memory to Memory copies
-    if((MEM_WB[1].opCode == lw) && (EX_MEM[1].opCode == sw)) {
-        if (EX_MEM[1].rt == MEM_WB[1].rt) {
-            cout << "MEM to MEM copy" << '\n';
-            MEM_WB[1].memOutput = EX_MEM[1].exOutput;
-        }
+    switch (EX_MEM[1].opCode) {
+        case sw:
+            switch (MEM_WB[1].opCode) {
+                case lw:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+                case lb:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+                case lbu:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+                case lhu:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+            }
+            break;
+        case sh:
+            switch (MEM_WB[1].opCode) {
+                case lw:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+                case lb:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+                case lbu:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+                case lhu:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+            }
+            break;
+        case sb:
+            switch (MEM_WB[1].opCode) {
+                case lw:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+                case lb:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+                case lbu:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+                case lhu:
+                    if (EX_MEM[1].rt == MEM_WB[1].rt) {
+                        cout << "MEM to MEM copy" << '\n';
+                        MEM_WB[1].memOutput = EX_MEM[1].exOutput;
+                    }
+                    break;
+            }
+            break;
     }
+
+
+
 }

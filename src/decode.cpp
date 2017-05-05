@@ -70,44 +70,48 @@ int decode(int instr, int programCounter){
     }
 
     if (((IF_ID[1] >> opCode_SHIFT) & opCode_MASK) != sw) {
-        switch (ID_EX[1].opCode) {
-            case lw:
+        if (((IF_ID[1] >> opCode_SHIFT) & opCode_MASK) != sh) {
+            if (((IF_ID[1] >> opCode_SHIFT) & opCode_MASK) != sb) {
+                switch (ID_EX[1].opCode) {
+                    case lw:
 
-                if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
-                    cout << "stall" << '\n';
-                    stall = true;
-                } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
-                    cout << "stall" << '\n';
-                    stall = true;
+                        if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
+                            cout << "stall" << '\n';
+                            stall = true;
+                        } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
+                            cout << "stall" << '\n';
+                            stall = true;
+                        }
+                        break;
+                    case lb:
+                        if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
+                            cout << "stall" << '\n';
+                            stall = true;
+                        } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
+                            cout << "stall" << '\n';
+                            stall = true;
+                        }
+                        break;
+                    case lbu:
+                        if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
+                            cout << "stall" << '\n';
+                            stall = true;
+                        } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
+                            cout << "stall" << '\n';
+                            stall = true;
+                        }
+                        break;
+                    case lhu:
+                        if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
+                            cout << "stall" << '\n';
+                            stall = true;
+                        } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
+                            cout << "stall" << '\n';
+                            stall = true;
+                        }
+                        break;
                 }
-                break;
-            case lb:
-                if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
-                    cout << "stall" << '\n';
-                    stall = true;
-                } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
-                    cout << "stall" << '\n';
-                    stall = true;
-                }
-                break;
-            case lbu:
-                if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
-                    cout << "stall" << '\n';
-                    stall = true;
-                } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
-                    cout << "stall" << '\n';
-                    stall = true;
-                }
-                break;
-            case lhu:
-                if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
-                    cout << "stall" << '\n';
-                    stall = true;
-                } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
-                    cout << "stall" << '\n';
-                    stall = true;
-                }
-                break;
+            }
         }
     }
 
@@ -140,27 +144,27 @@ int decode(int instr, int programCounter){
     switch(ID_EX[1].opCode){
         case beq:
             if(BEQ(reg[ID_EX[1].rs], reg[ID_EX[1].rt])){
-                return programCounter + ID_EX[1].imm;
+                return programCounter + ID_EX[1].imm - 1;
             }
             break;
         case bne:
             if(BNE(reg[ID_EX[1].rs], reg[ID_EX[1].rt])){
-                return programCounter + ID_EX[1].imm;
+                return programCounter + ID_EX[1].imm - 1;
             }
             break;
         case bgtz:
             if(BGTZ(reg[ID_EX[1].rs])){
-                return programCounter + ID_EX[1].imm;
+                return programCounter + ID_EX[1].imm - 1;
             }
             break;
         case bltz:
             if(BLTZ(reg[ID_EX[1].rs])){
-                return programCounter + ID_EX[1].imm;
+                return programCounter + ID_EX[1].imm - 1;
             }
             break;
         case blez:
             if(BLEZ(reg[ID_EX[1].rs])){
-                return programCounter + ID_EX[1].imm;
+                return programCounter + ID_EX[1].imm - 1;
             }
             break;
         case j:
