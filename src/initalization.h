@@ -2,6 +2,7 @@
 // Created by Nathan Pottorff on 4/25/17.
 //
 #include <iostream>
+#include "cache.h"
 
 using namespace std;
 
@@ -25,9 +26,8 @@ struct instrFormat {
 unsigned int mainMemory[1200] = {0};
 int reg[32];
 int sp, fp, pc;
-int clk, CPI, *Ihit, Dhit;
+int cycleCount, CPI, Ihit, Dhit;
 bool stall = false;
-
 
 int IF_ID[4] = {0};
 instrFormat ID_EX[4];

@@ -4,10 +4,14 @@
 
 #include<iostream>
 #include<fstream>
+#include "cache.h"
 #include "initalization.h"
 
 
 using namespace std;
+
+cache iCache = newCache(I_CACHE_SIZE, BLOCK_SIZE);
+cache dCache = newCache(D_CACHE_SIZE, BLOCK_SIZE);
 
 int readFile(string fileName){
     //Read in program files, and initialize the instruction memory (instMem)

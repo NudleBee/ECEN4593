@@ -1,4 +1,4 @@
-# Install script for directory: /Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593
+# Install script for directory: /Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

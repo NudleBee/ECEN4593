@@ -143,25 +143,32 @@ void accessMem(instrFormat instr) {
             MEM_WB[1].memOutput = instr.exOutput;
             break;
         case lb:
-            MEM_WB[1].memOutput = LB(instr.exOutput, instr.pos, instr.rt);
+            //MEM_WB[1].memOutput = LB(instr.exOutput, instr.pos, instr.rt);
+            MEM_WB[1].memOutput = readCacheByte(dCache, instr.exOutput);
             break;
         case lbu:
-            MEM_WB[1].memOutput = LBU(instr.exOutput, instr.pos, instr.rt);
+            //MEM_WB[1].memOutput = LBU(instr.exOutput, instr.pos, instr.rt);
+            MEM_WB[1].memOutput = readCacheByteUnsigned(dCache, instr.exOutput);
             break;
         case lhu:
-            MEM_WB[1].memOutput = LHU(instr.exOutput, instr.pos, instr.rt);
+            //MEM_WB[1].memOutput = LHU(instr.exOutput, instr.pos, instr.rt);
+            MEM_WB[1].memOutput = readCacheHalfwordUnsigned(dCache, instr.exOutput);
             break;
         case lw:
-            MEM_WB[1].memOutput = mainMemory[instr.exOutput];
+            //MEM_WB[1].memOutput = mainMemory[instr.exOutput];
+            MEM_WB[1].memOutput = readDCacheWord(dCache, instr.exOutput);
             break;
         case sb:
-            MEM_WB[1].memOutput = SB(instr.exOutput, instr.pos, instr.rt);
+            //MEM_WB[1].memOutput = SB(instr.exOutput, instr.pos, instr.rt);
+            writeCacheByte(dCache, instr.exOutput, reg[instr.rt]);
             break;
         case sh:
-            MEM_WB[1].memOutput = SH(instr.exOutput, instr.pos, instr.rt);
+            //MEM_WB[1].memOutput = SH(instr.exOutput, instr.pos, instr.rt);
+            writeCacheHalfword(dCache, instr.exOutput, reg[instr.rt]);
             break;
         case sw:
-            MEM_WB[1].memOutput = mainMemory[instr.exOutput];
+            //MEM_WB[1].memOutput = mainMemory[instr.exOutput];
+            writeCacheWord(dCache, instr.exOutput, reg[instr.rt]);
             break;
     }
 

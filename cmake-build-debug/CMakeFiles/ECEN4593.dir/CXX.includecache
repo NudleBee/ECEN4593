@@ -6,69 +6,91 @@
 
 #IncludeRegexTransform: 
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/main.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/main.cpp
 iostream
 -
 src/initalization.cpp
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/initalization.cpp
 src/fetch.cpp
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/fetch.cpp
 src/decode.cpp
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/decode.cpp
 src/execute.cpp
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/execute.cpp
 src/accessMem.cpp
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/accessMem.cpp
 src/writeBack.cpp
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/writeBack.cpp
+src/cache.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/cache.cpp
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/accessMem.cpp
 accessMem.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/accessMem.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/accessMem.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/accessMem.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/cache.cpp
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
+initalization.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/initalization.h
+cache.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/cache.h
+
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/cache.h
+
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/decode.cpp
 decode.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/decode.h
 initalization.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/initalization.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/decode.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/decode.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/execute.cpp
 execute.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/execute.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/execute.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/execute.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/fetch.cpp
 fetch.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/fetch.h
 initalization.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/initalization.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/fetch.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/fetch.h
 iostream
 -
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/initalization.cpp
 iostream
 -
 fstream
 -
+cache.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/cache.h
 initalization.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/initalization.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/initalization.h
 iostream
 -
+cache.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/cache.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.cpp
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/writeBack.cpp
 writeBack.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/writeBack.h
 initalization.h
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/initalization.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/initalization.h
 
-/Users/NathanPottorff/Documents/College/Senior/CompOrg/FinalProject/ECEN4593/src/writeBack.h
+/Users/DJ/Desktop/CompOrg/CLionProj/ECEN4593/src/writeBack.h
 

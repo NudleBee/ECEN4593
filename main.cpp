@@ -5,6 +5,7 @@
 #include "src/execute.cpp"
 #include "src/accessMem.cpp"
 #include "src/writeBack.cpp"
+#include "src/cache.cpp"
 
 using namespace std;
 
@@ -15,11 +16,18 @@ int main() {
     reg[29] = mainMemory[0];
     reg[30] = mainMemory[1];
     pc = mainMemory[5];
+    cycleCount = 0;
+
+    int iCacheHitRate = 0;
+    int dCacheHitRate = 0;
+    int inst = 0;
 
     //shove instruction through a loop
     for(int instI = pc; instI != 0; instI++) {
         reg[0] = 0;
-        fetch(mainMemory[instI]);
+        pc = instI;
+        inst = readICache(iCache, pc);
+        fetch(inst);
 
         reg[0] = 0;
         int branch = decode(IF_ID[0], instI);
@@ -85,8 +93,14 @@ int main() {
             cout << "reg[" << k << "] " << reg[k] << '\n';
         }*/
 
+        cycleCount++;
     }
 
+    iCacheHitRate = ((dCache->hitCount) * 100) / (dCache->accesses);
+    dCacheHitRate = ((dCache->hitCount) * 100) / (dCache->accesses);
+
+    deleteCache(iCache);
+    deleteCache(dCache);
 
     return 0;
 }
