@@ -45,6 +45,7 @@ bool BLEZ(int rs){
 }
 
 int decode(int instr, int programCounter){
+    reg[0] = 0;
     instrFormat nullFormat;
     ID_EX[1].opCode = (instr >> opCode_SHIFT) & opCode_MASK;
     if (ID_EX[1].opCode == r_type){
@@ -55,12 +56,14 @@ int decode(int instr, int programCounter){
         ID_EX[1].funct = instr & funct_MASK;
         ID_EX[1].imm = 0;
         ID_EX[1].address = 0;
+        //cout << "DECODE: " << ID_EX[1].funct;
     }
     else {
         ID_EX[1].rs = (instr >> rs_SHIFT) & rs_MASK;
         ID_EX[1].rt = (instr >> rt_SHIFT) & rt_MASK;
         ID_EX[1].imm = instr & imm_MASK;
         ID_EX[1].address = instr & add_MASK;
+        //cout << "DECODE: " << ID_EX[1].opCode;
     }
 
     int s = ID_EX[1].imm & 0x8000;
@@ -69,44 +72,36 @@ int decode(int instr, int programCounter){
         ID_EX[1].imm = (int16_t) ID_EX[1].imm;
     }
 
+    //stall
     if (((IF_ID[1] >> opCode_SHIFT) & opCode_MASK) != sw) {
         if (((IF_ID[1] >> opCode_SHIFT) & opCode_MASK) != sh) {
             if (((IF_ID[1] >> opCode_SHIFT) & opCode_MASK) != sb) {
                 switch (ID_EX[1].opCode) {
                     case lw:
-
                         if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
-                            cout << "stall" << '\n';
                             stall = true;
                         } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
-                            cout << "stall" << '\n';
                             stall = true;
                         }
                         break;
                     case lb:
                         if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
-                            cout << "stall" << '\n';
                             stall = true;
                         } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
-                            cout << "stall" << '\n';
                             stall = true;
                         }
                         break;
                     case lbu:
                         if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
-                            cout << "stall" << '\n';
                             stall = true;
                         } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
-                            cout << "stall" << '\n';
                             stall = true;
                         }
                         break;
                     case lhu:
                         if (ID_EX[1].rt == ((IF_ID[1] >> rs_SHIFT) & rs_MASK)) {
-                            cout << "stall" << '\n';
                             stall = true;
                         } else if (ID_EX[1].rt == ((IF_ID[1] >> rt_SHIFT) & rt_MASK)) {
-                            cout << "stall" << '\n';
                             stall = true;
                         }
                         break;
@@ -115,30 +110,9 @@ int decode(int instr, int programCounter){
         }
     }
 
-    //Forwarding EX/MEM
-    if(EX_MEM[1].rd != 0) {
-        if(ID_EX[1].rd != ID_EX[1].rs) {
-            if (EX_MEM[1].rd == ID_EX[1].rs) {
-                ID_EX[1].rs = EX_MEM[1].exOutput;
-                cout << "EX/MEM forward" << '\n';
-            } else if (EX_MEM[1].rd == ID_EX[1].rt) {
-                ID_EX[1].rt = EX_MEM[1].exOutput;
-                cout << "EX/MEM forward" << '\n';
-            }
-        }
-    }
-    //Forwarding MEM/WB
-    if(MEM_WB[1].rd != 0) {
-        if(ID_EX[1].rd != ID_EX[1].rt) {
-            if (MEM_WB[1].rd == ID_EX[1].rs) {
-                cout << "MEM/WB forward" << '\n';
-                ID_EX[1].rs = MEM_WB[1].exOutput;
-            } else if (MEM_WB[1].rd == ID_EX[1].rt) {
-                ID_EX[1].rt = MEM_WB[1].exOutput;
-                cout << "MEM/WB forward" << '\n';
-            }
-        }
-    }
+
+
+
 
     //Branches, jumps, fowarding
     switch(ID_EX[1].opCode){
@@ -154,16 +128,19 @@ int decode(int instr, int programCounter){
             break;
         case bgtz:
             if(BGTZ(reg[ID_EX[1].rs])){
+                ID_EX[1].rt = 0x01;
                 return programCounter + ID_EX[1].imm - 1;
             }
             break;
         case bltz:
             if(BLTZ(reg[ID_EX[1].rs])){
+                ID_EX[1].rt = 0x01;
                 return programCounter + ID_EX[1].imm - 1;
             }
             break;
         case blez:
             if(BLEZ(reg[ID_EX[1].rs])){
+                ID_EX[1].rt = 0x01;
                 return programCounter + ID_EX[1].imm - 1;
             }
             break;
@@ -179,6 +156,6 @@ int decode(int instr, int programCounter){
             }
     }
 
-
+    //cout << " " << ID_EX[1].rd << ", " << ID_EX[1].rs << ", " << ID_EX[1].rt << '\n';
     return programCounter;
 }

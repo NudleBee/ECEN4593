@@ -68,6 +68,80 @@ int LHU(int address, int pos, int rt){
 
 void accessMem(instrFormat instr) {
     switch (instr.opCode) {
+        case 0x0:
+            switch (instr.funct){
+                case add:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case addu:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case and_f:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case nor:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case or_f:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case movn:
+                    if(reg[instr.rt] != 0) {
+                        MEM_WB[1].memOutput = instr.exOutput;
+                    }
+                    break;
+                case movz:
+                    if(reg[instr.rt] == 0) {
+                        MEM_WB[1].memOutput = instr.exOutput;
+                    }
+                    break;
+                case slt:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case sltu:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case sll:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case srl:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case sub:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case subu:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case xor_f:
+                    MEM_WB[1].memOutput = instr.exOutput;
+                    break;
+                case jr:
+                    //cout << "jr" << " " << reg[instr.rs] << '\n';
+                    break;
+            }
+            break;
+        case addi:
+            MEM_WB[1].memOutput = instr.exOutput;
+            break;
+        case addiu:
+            MEM_WB[1].memOutput = instr.exOutput;
+            break;
+        case andi:
+            MEM_WB[1].memOutput = instr.exOutput;
+            break;
+        case xori:
+            MEM_WB[1].memOutput = instr.exOutput;
+            break;
+        case ori:
+            MEM_WB[1].memOutput = instr.exOutput;
+            break;
+        case slti:
+            MEM_WB[1].memOutput = instr.exOutput;
+            break;
+        case sltiu:
+            MEM_WB[1].memOutput = instr.exOutput;
+            break;
         case lb:
             MEM_WB[1].memOutput = LB(instr.exOutput, instr.pos, instr.rt);
             break;

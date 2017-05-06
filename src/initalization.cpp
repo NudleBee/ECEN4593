@@ -18,7 +18,7 @@ int readFile(string fileName){
     if(program.is_open()) {
         while (getline(program, wrd, ',')) {
             getline(program, tmp);
-            instrMem[i] = stoul(wrd, nullptr, 16);
+            mainMemory[i] = stoul(wrd, nullptr, 16);
             i++;
         }
     }
@@ -27,15 +27,32 @@ int readFile(string fileName){
     return i;
 }
 
+void printMem(){
+    cout << "========Main Memory==========" << '\n';
+    for(int k = 0; k <= 1200; k++){
+        cout << "mainMemory[" << k << "] " << mainMemory[k] << '\n';
+    }
+    return;
+}
+
 void shadowShift(){
     MEM_WB[2] = EX_MEM[1];
     EX_MEM[2] = ID_EX[1];
 
-    for (int i = 0; i < 3; i++) {
-        IF_ID[i] = IF_ID[i + 1];
-        ID_EX[i] = ID_EX[i + 1];
-        EX_MEM[i] = EX_MEM[i + 1];
-        MEM_WB[i] = MEM_WB[i + 1];
+    if(stall == true){
+        for (int i = 0; i < 3; i++) {
+            EX_MEM[i] = EX_MEM[i + 1];
+            MEM_WB[i] = MEM_WB[i + 1];
+        }
+        stall = false;
+    }
+    else {
+        for (int i = 0; i < 3; i++) {
+            IF_ID[i] = IF_ID[i + 1];
+            ID_EX[i] = ID_EX[i + 1];
+            EX_MEM[i] = EX_MEM[i + 1];
+            MEM_WB[i] = MEM_WB[i + 1];
+        }
     }
     return;
 }

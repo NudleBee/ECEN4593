@@ -8,7 +8,7 @@
 // i or j types
 #define andi 0xc //0 extended (no change)
 #define addi 0x8 //sign extended
-#define addui 0x9 //sign extended
+#define addiu 0x9 //sign extended
 #define ori 0xd //0 extended
 #define xori 0xe //sign extended
 #define slti 0xa //sign extended

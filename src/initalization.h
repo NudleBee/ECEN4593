@@ -22,8 +22,7 @@ struct instrFormat {
     int memOutput = 0;
 };
 
-int instrMem[500];
-int mainMemory[1200] = {0};
+unsigned int mainMemory[1200] = {0};
 int reg[32];
 int sp, fp, pc;
 int clk, CPI, *Ihit, Dhit;
@@ -38,5 +37,7 @@ instrFormat MEM_WB[4];
 int readFile(string fileName);
 
 void shadowShift();
+
+void printMem();
 
 #endif //ECEN4593_INITALIZATION_H

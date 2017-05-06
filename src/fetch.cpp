@@ -9,6 +9,7 @@
 using namespace std;
 
 void fetch(int inst){
+    //cout << "FETCH: " << inst << '\n';
     IF_ID[1] = inst;
     return;
 }
